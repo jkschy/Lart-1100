@@ -1,47 +1,50 @@
-import Decision from "./Decision";
+import Decision, {DecisionJSONType} from "./Decision";
+import {ChoiceTypes, ChoiceTypesFromString} from "../Utils/Enums";
+import Trigger, {triggerJSONType} from "./Trigger";
+
+export type ChoiceJSONType =
+    {
+        title: string,
+        description: string,
+        decisions: DecisionJSONType[],
+        type: string,
+        trigger: triggerJSONType,
+    };
 
 class Choice {
     private choiceTitle: string
     private choiceDescription: string
-    private readonly leftDecision: Decision
-    private readonly rightDecision: Decision
+    private readonly decisions: Decision[];
+    private readonly type: ChoiceTypes
+    private readonly trigger: Trigger;
 
-    private constructor(title: string, description: string, left: Decision, right: Decision) {
+
+    private constructor(title: string, description: string, decisions: Decision[], type: ChoiceTypes, trigger: Trigger) {
         this.choiceTitle = title;
         this.choiceDescription = description
-        this.leftDecision = left;
-        this.rightDecision = right;
+        this.decisions = decisions;
+        this.type = type;
+        this.trigger = trigger;
     }
 
-    public get left() {
-        return this.leftDecision
+    public get decisionType(): ChoiceTypes {
+        return this.type
     }
 
-    public get right() {
-        return this.rightDecision;
+    public getDecisions() {
+        return this.decisions;
     }
 
-    public choose(choice: "left" | "right"): {stat: string, amount: number} {
-        if (choice === "left") {
-            return {
-                stat: this.leftDecision.effetedStat,
-                amount: this.leftDecision.amountChange,
-            }
-        } else {
-            return {
-                stat: this.rightDecision.effetedStat,
-                amount: this.rightDecision.amountChange,
-            }
-        }
-    }
-
-    public static fromJson(jsonData: {title: string, description: string, left: {name: string, stat: string, amount: number}, right: {name: string, stat: string, amount: number}}) {
-        const left = Decision.fromJSON(jsonData.left);
-        const right = Decision.fromJSON(jsonData.right);
-
-        return new Choice(jsonData.title, jsonData.description, left, right);
+    public static fromJson(jsonData: ChoiceJSONType) {
+        const decisions: Decision[] = []
+        return new Choice(jsonData.title, jsonData.description, Decision.fromDecisionArray(jsonData.decisions), ChoiceTypesFromString(jsonData.type), Trigger.fromJSON(jsonData.trigger));
     }
 
 }
+
+
+
+
+
 
 export default Choice
