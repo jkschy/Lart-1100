@@ -1,1 +1,108 @@
-{}
+{
+    "ComputerScience": {
+        "CS1": {
+            "Question": "What computer do you buy?",
+            "A1": {
+                "name": "Mac",
+                "effectedStat": ["money", "free time"],
+                "effectAmount": ["-1200", "-5"]
+            },
+            "A2": {
+                "name": "Windows",
+                "effectedStat": ["money", "free time"],
+                "effectAmount": ["-500", "-20"]
+            },
+            "trigger": {
+                "Random": "5",
+                "stat": "money",
+                "comparison": "<",
+                "amount": "10"
+            }
+        },
+        "Nusing": {
+            "N1": {
+                "Question": "Who is your favorate teacher?",
+                "A1": {
+                    "name": "Sarah Neal",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-500", "-5"]
+                },
+                "A2": {
+                    "name": "Randal Grey",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["500"]
+                }
+            }
+        },
+
+        "Random": {
+            "R1": {
+                "Question": "Your friends invited to a party do you want to go?",
+                "A1": {
+                    "name": "yes",
+                    "effectedStat": ["integrity", "free time", "popularity"],
+                    "effectAmount": ["-10", "-10", "10"]
+                },
+                "A2": {
+                    "name": "no",
+                    "effectedStat": ["integrity", "free time", "popularity"],
+                    "effectAmount": ["10", "10", "-10"]
+                }
+            },
+
+            "R2": {
+                "Question": "Coach asked you to join the team do you want to join?",
+                "A1": {
+                    "name": "yes",
+                    "effectedStat": ["integrity", "free time", "popularity"],
+                    "effectAmount": ["-14", "-30", "20"],
+                    "load": "R3"
+                },
+                "A2": {
+                    "name": "no",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["10"]
+                },
+
+                "trigger": {
+                    "Random": "5",
+                    "stat": "populatiy",
+                    "comparison": "<",
+                    "amount": "10"
+                }
+            },
+
+            "R3": {
+                "Question": "What sport would you like to join?",
+                "A1": {
+                    "name": "Football",
+                    "effectedStat": ["integrity", "free time", "popularity"],
+                    "effectAmount": ["-14", "-30", "20"]
+                },
+                "A2": {
+                    "name": "Basketball",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["10"]
+                },
+
+                "A3": {
+                    "name": "Volleyball",
+                    "effectedStat": ["integrity", "free time", "popularity"],
+                    "effectAmount": ["-14", "-30", "20"]
+                },
+                "A4": {
+                    "name": "Esports",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["10"]
+                },
+
+                "trigger": {
+                    "Random": "5",
+                    "stat": "populatiy",
+                    "comparison": "<",
+                    "amount": "10"
+                }
+            }
+        }
+    }
+}
