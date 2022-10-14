@@ -1,5 +1,6 @@
 @import "styles/MoreMenu/MoreMenu";
 @import "styles/sidebar/Sidebar";
+@import "styles/animations";
 
 body {
   margin: 0;
@@ -47,8 +48,9 @@ code {
   justify-content: space-around;
 }
 
-.flex {
+.flex-end {
   display: flex;
+  justify-content: flex-end;
 }
 
 .full-width {
@@ -65,4 +67,9 @@ code {
 
 .float-right {
   float: right;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }

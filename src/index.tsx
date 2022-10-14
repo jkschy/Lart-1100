@@ -16,9 +16,7 @@ const darkTheme = createTheme({
 
 root.render(
     <NextUIProvider theme={darkTheme}>
-        <React.StrictMode>
-            <App />
-        </React.StrictMode>
+        <App />
     </NextUIProvider>
 
 );

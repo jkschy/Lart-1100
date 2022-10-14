@@ -1,1 +1,96 @@
-{}
+{
+  "ComputerScience": {
+    "CS1": {
+      "title": "What computer do you buy?",
+      "description": "As your first decision, you must pick the type of computer you want to buy... choose wisely!",
+      "type": "twoChoice",
+      "trigger": {
+        "event": "Start"
+      },
+      "options": [
+        {
+          "name": "Mac",
+          "effectedStat": [
+            "money",
+            "intelligence"
+          ],
+          "effectAmount": [
+            "-1200",
+            "-5"
+          ]
+        },
+        {
+          "name": "Windows",
+          "effectedStat": [
+            "money",
+            "intelligence"
+          ],
+          "effectAmount": [
+            "-500",
+            "-20"
+          ]
+        }
+      ]
+    },
+    "CS2": {
+      "title": "Upgrade Computer",
+      "description": "You have made enough money to upgrade your computer if you want!",
+      "type": "twoChoice",
+      "trigger": {
+        "event": "StatChange",
+        "stat": "money",
+        "comparison": ">",
+        "amount": "1000"
+      },
+      "options": [
+        {
+          "name": "Yes",
+          "load": "CS3",
+          "tooltip": "Choose new Computer!"
+        },
+        {
+          "name": "No",
+          "effectedStat": [
+            "popularity",
+            "free time"
+          ],
+          "effectAmount": [
+            "-10",
+            "-5"
+          ]
+        }
+      ]
+    },
+    "CS3": {
+      "title": "What is your new computer",
+      "type": "twoChoice",
+      "trigger": {
+        "event": "CS2"
+      },
+      "options": [
+        {
+          "name": "Mac",
+          "effectedStat": [
+            "money",
+            "free time"
+          ],
+          "effectAmount": [
+            "-800",
+            "+5"
+          ]
+        },
+        {
+          "name": "Windows",
+          "effectedStat": [
+            "money",
+            "free time"
+          ],
+          "effectAmount": [
+            "-400",
+            "-5"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,13 +1,50 @@
-import React from 'react';
-import {Card, Container, Divider, Spacer, Text} from "@nextui-org/react";
+import React, {useEffect, useState} from 'react';
+import {Card, Container, Divider, Loading, Spacer, Text} from "@nextui-org/react";
 import KarmaBar from "./Components/Generic/KarmaBar";
 import Player from "./Models/Player";
 import MoreMenu from "./Components/Generic/MoreMenu";
-import Sidebar from "./Components/Generic/Sidebar";
-
+import Sidebar from "./Components/Generic/Sidebar/Sidebar";
+import ChoiceLoader from "./Utils/ChoiceLoader";
+import ChoiceComponent from "./Components/Choice/ChoiceComponent";
+import {Majors} from "./Utils/Enums";
+import Choice from "./Models/Choice";
 
 function App() {
-    const player = Player.newPlayer();
+    const [player, setPlayer] = useState(Player.newPlayer());
+    const [showChoice, setShowChoice] = useState(false);
+    const [choiceLoader, setChoiceLoader] = useState<ChoiceLoader | undefined>()
+    const [currentChoice, setCurrentChoice] = useState<Choice | undefined>();
+
+    const getNewChoice = () => {
+        if (currentChoice) {
+            choiceLoader?.choices.get(Majors.ComputerScience)?.getNewChoice();
+        }
+
+        if (choiceLoader) {
+            setCurrentChoice(choiceLoader.choices.get(Majors.ComputerScience)?.getChoice());
+        } else {
+            setChoiceLoader(() => {
+                const loader = new ChoiceLoader();
+                setCurrentChoice(loader.choices.get(Majors.ComputerScience)?.getChoice());
+                return loader;
+            })
+        }
+    }
+
+    useEffect(getNewChoice, [])
+
+    useEffect(() => {
+        setShowChoice(true);
+    }, [currentChoice])
+
+
+    const choose = () => {
+        setTimeout(() => {
+            setShowChoice(false);
+            setTimeout(getNewChoice, 5000)
+        }, 500);
+    }
+
 
   return (
     <Container className={"main-container"}>
@@ -27,12 +64,15 @@ function App() {
                     <Spacer/>
                     <Divider/>
                     <Spacer/>
-
+                    <Sidebar player={player} updatePlayer={setPlayer}>
+                        {showChoice && <ChoiceComponent choice={currentChoice}
+                                                        updatePlayer={setPlayer}
+                                                        choose={choose}
+                                                        choiceList={choiceLoader?.choices.get(Majors.ComputerScience)}/>}
+                        {!showChoice && <Loading type={"gradient"} size={"xl"} css={{display: "flex", justifyContent: "center", height: "100%"}}/>}
+                    </Sidebar>
                 </Card.Body>
             </Card>
-        <Sidebar>
-
-        </Sidebar>
     </Container>
   );
 }

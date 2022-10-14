@@ -4,19 +4,15 @@ import React, {useEffect, useState} from "react";
 const KarmaBar = (props: KarmaBarProps) => {
     const [curValue, setCurValue] = useState(props.currentValue);
 
-    useEffect(() => {
-        if (props.currentValue === curValue) {
-            return
-        }
-
-        const diff = Math.abs(props.currentValue - curValue);
-
-        for (let i = 0; i < diff; i++) {
-            setTimeout(() => {
-                setCurValue((curVal) => curVal - 1);
-            }, i * 3)
-        }
-    }, [props.currentValue])
+    // useEffect(() => {
+    //     const diff = Math.abs(props.currentValue - curValue);
+    //
+    //     for (let i = 0; i < diff; i++) {
+    //         setTimeout(() => {
+    //             setCurValue((curVal) => curVal - 1);
+    //         }, i * 10)
+    //     }
+    // }, [props.currentValue])
 
         const getColor = () => {
             switch (props.name) {
@@ -34,7 +30,7 @@ const KarmaBar = (props: KarmaBarProps) => {
                 <Progress value={props.currentValue} shadow color={getColor()}/>
                 <div className={"flex-space-between"}>
                     <Text>{props.name}</Text>
-                    <Text>{curValue}/100</Text>
+                    <Text>{props.currentValue}/100</Text>
                 </div>
             </div>
         )
