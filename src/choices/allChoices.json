@@ -1,108 +1,454 @@
 {
+    "Random": {
+        "R1": {
+            "title": "Do you want to go to the CAB event?",
+            "description": "Cab events are fun but they take tie out of your day",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "Yes",
+                    "effectedStat": ["happieness", "free time"],
+                    "effectAmount": ["+50", "-10"]
+                },
+                {
+                    "name": "No",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+20"]
+                }
+            ]
+        },
+        "R2": {
+            "title": "Do you want to go to the party off campus?",
+            "description": "A party off campus can be fun but is it worth the risk?",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "Yes",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-50"]
+                },
+                {
+                    "name": "No",
+                    "effectedStat": ["ingerity"],
+                    "effectAmount": ["+20"]
+                }
+            ]
+        },
+        "R3": {
+            "title": "What sport do you want to join?",
+            "description": "Coach needs another player choose what sport you want to play.",
+            "type": "fourChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "Football",
+                    "effectedStat": ["intelligence", "free time"],
+                    "effectAmount": ["-50", "-50"]
+                },
+                {
+                    "name": "Volleyball",
+                    "effectedStat": ["free time"],
+                    "effectAmount": ["-50"]
+                },
+                {
+                    "name": "Soccoe",
+                    "effectedStat": ["free time"],
+                    "effectAmount": ["-50"]
+                },
+                {
+                    "name": "None",
+                    "effectedStat": ["free time", "intelligence"],
+                    "effectAmount": ["+20", "+20"]
+                }
+            ]
+        },
+        "R4": {
+            "title": "Who do you want your friends to be?",
+            "description": "",
+            "type": "threeChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "Fun and irresponsible",
+                    "effectedStat": ["popularity", "happieness", "ingerity"],
+                    "effectAmount": ["+50", "+50", "-20"]
+                },
+                {
+                    "name": "Rich and Not Smart",
+                    "effectedStat": ["intelligence", "money"],
+                    "effectAmount": ["-50", "+50"]
+                },
+                {
+                    "name": "Smart and Responsible",
+                    "effectedStat": ["intelligence", "money"],
+                    "effectAmount": ["+20", "+20"]
+                }
+            ]
+        },
+        "R5": {
+            "title": "Did you come to college with your significant other?",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "Yes",
+                    "effectedStat": ["happieness", "free time"],
+                    "effectAmount": ["+50", "-50"]
+                },
+                {
+                    "name": "No",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+20"]
+                }
+            ]
+        },
+        "R6": {
+            "title": "Your roomate is very mess how do you handle the situation?",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "Confront them in a polite way",
+                    "effectedStat": ["happieness"],
+                    "effectAmount": ["+50"]
+                },
+                {
+                    "name": "Let it be",
+                    "effectedStat": ["popularity", "happieness"],
+                    "effectAmount": ["+20", "-20"]
+                }
+            ]
+        },
+        "R7": {
+            "title": "Your friends start going to places without you.",
+            "description": "How do you handle this situation?",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "Make new friends",
+                    "effectedStat": ["happieness", "free time"],
+                    "effectAmount": ["+50", "-20"]
+                },
+                {
+                    "name": "Hope they start inviting you",
+                    "effectedStat": ["happieness", "free time"],
+                    "effectAmount": ["-20", "+20"]
+                }
+            ]
+        },
+        "R8": {
+            "title": "A person of the opposite sex wants to go to third base.",
+            "description": "Do you do it?",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "Yes",
+                    "effectedStat": ["happieness"],
+                    "effectAmount": ["+50"]
+                },
+                {
+                    "name": "No",
+                    "effectedStat": ["money", "free time", "ingerity", "intelligence"],
+                    "effectAmount": ["-20", "+20", "+20", "+20"]
+                }
+            ]
+        },
+        "R9": {
+            "title": "You are offered a smoke at a party.",
+            "description": "Do you do it?",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "Yes",
+                    "effectedStat": ["popularity", "money", "intelligence"],
+                    "effectAmount": ["+5", "-10", "-20"]
+                },
+                {
+                    "name": "No",
+                    "effectedStat": ["happieness", "money", "ingerity"],
+                    "effectAmount": ["-20", "+20", "+20"]
+                }
+            ]
+        },
+        "R10": {
+            "title": "you are offered a drink at a party.",
+            "description": "Do you take it?",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "Yes",
+                    "effectedStat": ["popularity", "money", "ingerity"],
+                    "effectAmount": ["+5", "-10", "-20"]
+                },
+                {
+                    "name": "No",
+                    "effectedStat": ["intelligence", "ingerity"],
+                    "effectAmount": ["+20", "+20"]
+                }
+            ]
+        },
+        "R11": {
+            "title": "Do you go to chapel this morning?",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "Yes",
+                    "effectedStat": ["happieness", "free time"],
+                    "effectAmount": ["-10", "-20"]
+                },
+                {
+                    "name": "No",
+                    "effectedStat": ["money", "ingerity"],
+                    "effectAmount": ["-20", "-20"]
+                }
+            ]
+        },
+        "R12": {
+            "title": "Do you want to sleep in or go to class?",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "Sleep in",
+                    "effectedStat": ["happieness"],
+                    "effectAmount": ["+20"]
+                },
+                {
+                    "name": "Go to class",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+20"]
+                }
+            ]
+        }
+    },
     "ComputerScience": {
         "CS1": {
-            "Question": "What computer do you buy?",
-            "A1": {
-                "name": "Mac",
-                "effectedStat": ["money", "free time"],
-                "effectAmount": ["-1200", "-5"]
-            },
-            "A2": {
-                "name": "Windows",
-                "effectedStat": ["money", "free time"],
-                "effectAmount": ["-500", "-20"]
-            },
+            "title": "What computer do you buy?",
+            "description": "As your first decision, you must pick the type of computer you want to buy... choose wisely!",
+            "type": "twoChoice",
             "trigger": {
-                "Random": "5",
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "Mac",
+                    "effectedStat": ["money", "intelligence"],
+                    "effectAmount": ["-1200", "-5"]
+                },
+                {
+                    "name": "Windows",
+                    "effectedStat": ["money", "intelligence"],
+                    "effectAmount": ["-500", "-20"]
+                }
+            ]
+        },
+        "CS2": {
+            "title": "Upgrade Computer",
+            "description": "You have made enough money to upgrade your computer if you want!",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "StatChange",
                 "stat": "money",
-                "comparison": "<",
-                "amount": "10"
-            }
-        },
-        "Nusing": {
-            "N1": {
-                "Question": "Who is your favorate teacher?",
-                "A1": {
-                    "name": "Sarah Neal",
-                    "effectedStat": ["integrity"],
-                    "effectAmount": ["-500", "-5"]
-                },
-                "A2": {
-                    "name": "Randal Grey",
-                    "effectedStat": ["integrity"],
-                    "effectAmount": ["500"]
-                }
-            }
-        },
-
-        "Random": {
-            "R1": {
-                "Question": "Your friends invited to a party do you want to go?",
-                "A1": {
-                    "name": "yes",
-                    "effectedStat": ["integrity", "free time", "popularity"],
-                    "effectAmount": ["-10", "-10", "10"]
-                },
-                "A2": {
-                    "name": "no",
-                    "effectedStat": ["integrity", "free time", "popularity"],
-                    "effectAmount": ["10", "10", "-10"]
-                }
+                "comparison": ">",
+                "amount": "1000"
             },
-
-            "R2": {
-                "Question": "Coach asked you to join the team do you want to join?",
-                "A1": {
-                    "name": "yes",
-                    "effectedStat": ["integrity", "free time", "popularity"],
-                    "effectAmount": ["-14", "-30", "20"],
-                    "load": "R3"
+            "options": [
+                {
+                    "name": "Yes",
+                    "load": "CS3",
+                    "tooltip": "Choose new Computer!"
                 },
-                "A2": {
-                    "name": "no",
-                    "effectedStat": ["integrity"],
-                    "effectAmount": ["10"]
-                },
-
-                "trigger": {
-                    "Random": "5",
-                    "stat": "populatiy",
-                    "comparison": "<",
-                    "amount": "10"
+                {
+                    "name": "No",
+                    "effectedStat": ["popularity", "free time"],
+                    "effectAmount": ["-10", "-5"]
                 }
+            ]
+        },
+        "CS3": {
+            "title": "What is your new computer",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "CS2"
             },
-
-            "R3": {
-                "Question": "What sport would you like to join?",
-                "A1": {
-                    "name": "Football",
-                    "effectedStat": ["integrity", "free time", "popularity"],
-                    "effectAmount": ["-14", "-30", "20"]
+            "options": [
+                {
+                    "name": "Mac",
+                    "effectedStat": ["money", "free time"],
+                    "effectAmount": ["-800", "+5"]
                 },
-                "A2": {
-                    "name": "Basketball",
-                    "effectedStat": ["integrity"],
-                    "effectAmount": ["10"]
-                },
-
-                "A3": {
-                    "name": "Volleyball",
-                    "effectedStat": ["integrity", "free time", "popularity"],
-                    "effectAmount": ["-14", "-30", "20"]
-                },
-                "A4": {
-                    "name": "Esports",
-                    "effectedStat": ["integrity"],
-                    "effectAmount": ["10"]
-                },
-
-                "trigger": {
-                    "Random": "5",
-                    "stat": "populatiy",
-                    "comparison": "<",
-                    "amount": "10"
+                {
+                    "name": "Windows",
+                    "effectedStat": ["money", "free time"],
+                    "effectAmount": ["-400", "-5"]
                 }
-            }
+            ]
+        },
+        "CS4": {
+            "title": "Do you enjoy videogames?",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "start"
+            },
+            "options": [
+                {
+                    "name": "Yes",
+                    "effectedStat": ["intelligence", "free time"],
+                    "effectAmount": ["+50", "-50"]
+                },
+                {
+                    "name": "No",
+                    "effectedStat": ["ingerity"],
+                    "effectAmount": ["+20"]
+                }
+            ]
+        },
+        "CS5": {
+            "title": "Are you going to get an internship?",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "start"
+            },
+            "options": [
+                {
+                    "name": "Yes",
+                    "effectedStat": ["intelligence", "free time", "money"],
+                    "effectAmount": ["+20", "-20", "+50"]
+                },
+                {
+                    "name": "No",
+                    "effectedStat": ["free time"],
+                    "effectAmount": ["+20"]
+                }
+            ]
+        },
+        "CS6": {
+            "title": "Do you want a BS or BA of computer science?",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "CS2"
+            },
+            "options": [
+                {
+                    "name": "BS",
+                    "effectedStat": ["intelligence", "free time"],
+                    "effectAmount": ["+20", "-20"]
+                },
+                {
+                    "name": "BA",
+                    "effectedStat": ["money", "free time"],
+                    "effectAmount": ["+10", "+10"]
+                }
+            ]
+        }
+    },
+
+    "Nursing": {
+        "N1": {
+            "title": "Why do you want to be a nurse?",
+            "description": "",
+            "type": "threeChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "My family does it.",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+20"]
+                },
+                {
+                    "name": "I like to help people.",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+20"]
+                },
+                {
+                    "name": "For the money",
+                    "effectedStat": ["money"],
+                    "effectAmount": ["+20"]
+                }
+            ]
+        }
+    },
+
+    "Education": {
+        "E1": {
+            "title": "Do you enjoy school",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "Yes",
+                    "effectedStat": ["happieness"],
+                    "effectAmount": ["+20"]
+                },
+                {
+                    "name": "No",
+                    "effectedStat": ["happieness"],
+                    "effectAmount": ["-20"]
+                }
+            ]
+        }
+    },
+
+    "Buisness": {
+        "B1": {
+            "title": "Do you have a clear specific goal for after graduation?",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "Yes",
+                    "effectedStat": ["money", "intelligence"],
+                    "effectAmount": ["+10", "+10"]
+                },
+                {
+                    "name": "No",
+                    "effectedStat": ["money", "free time"],
+                    "effectAmount": ["-50", "-20"]
+                }
+            ]
         }
     }
 }
