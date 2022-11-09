@@ -1,40 +1,57 @@
-import React, {useEffect, useState} from 'react';
-import {Card, Container, Divider, Loading, Spacer, Text} from "@nextui-org/react";
+import React, {useEffect, useRef, useState} from 'react';
+import {Button, Card, Container, Divider, Loading, Spacer, Text} from "@nextui-org/react";
 import KarmaBar from "./Components/Generic/KarmaBar";
 import Player from "./Models/Player";
 import MoreMenu from "./Components/Generic/MoreMenu";
 import Sidebar from "./Components/Generic/Sidebar/Sidebar";
-import ChoiceLoader from "./Utils/ChoiceLoader";
 import ChoiceComponent from "./Components/Choice/ChoiceComponent";
 import {Majors} from "./Utils/Enums";
 import Choice from "./Models/Choice";
+import MajorsCarousel from "./Components/Intro/MajorsCarousel";
 
 function App() {
-    const [player, setPlayer] = useState(Player.newPlayer());
+    const [player, setPlayer] = useState<Player | undefined>();
     const [showChoice, setShowChoice] = useState(false);
-    const [choiceLoader, setChoiceLoader] = useState<ChoiceLoader | undefined>()
     const [currentChoice, setCurrentChoice] = useState<Choice | undefined>();
+    const [major, setMajor] = useState("");
+
+    const changeMajor = (major: string) => {
+        setMajor(major);
+    }
+
+    const videoRef = useRef<HTMLVideoElement>(null);
 
     const getNewChoice = () => {
         if (currentChoice) {
-            choiceLoader?.choices.get(Majors.ComputerScience)?.getNewChoice();
+            player?.newChoice()
+        }
+        const choice = player?.getChoice()
+        if (choice) {
+            setCurrentChoice(choice)
         }
 
-        if (choiceLoader) {
-            setCurrentChoice(choiceLoader.choices.get(Majors.ComputerScience)?.getChoice());
-        } else {
-            setChoiceLoader(() => {
-                const loader = new ChoiceLoader();
-                setCurrentChoice(loader.choices.get(Majors.ComputerScience)?.getChoice());
-                return loader;
-            })
-        }
     }
 
-    useEffect(getNewChoice, [])
+    useEffect(() => {
+        if (!currentChoice && player && player.choiceLoader) {
+            setCurrentChoice(player?.getChoice())
+        }
+    }, [player])
 
     useEffect(() => {
-        setShowChoice(true);
+        if(Player.hasExistingPlayer()) {
+            setPlayer(Player.newPlayer())
+        }
+
+        if (videoRef.current) {
+            videoRef.current.playbackRate = 0.5;
+        }
+    }, [])
+
+    useEffect(() => {
+        if (currentChoice) {
+            setShowChoice(true);
+        }
     }, [currentChoice])
 
 
@@ -46,16 +63,18 @@ function App() {
     }
 
 
-  return (
-    <Container className={"main-container"}>
-        <MoreMenu/>
-        <Card color={"gradient"}>
+    return (
+        <Container className={"main-container"}>
+            <video autoPlay loop muted playsInline preload="auto" src={"video.mp4"}
+                   style={{position: "absolute", left: "0", width: "100vw", height: "100vh"}} ref={videoRef}/>
+            <MoreMenu/>
+            <Card color={"gradient"} css={{w: "85%", m: "30px auto"}}>
                 <Card.Header css={{justifyContent: 'center'}}>
                     <Text h2 css={{
                         textGradient: "90deg, hsla(25, 91%, 54%, 1) 29%, hsla(42, 100%, 66%, 1) 100%",
                     }}>Lart 1100</Text>
                 </Card.Header>
-                <Card.Body>
+                {player && <Card.Body>
                     <div className={"flex-center CGap-medium"}>
                         <KarmaBar currentValue={player.integrity} name={"Integrity"}/>
                         <KarmaBar currentValue={player.intelligence} name={"Intelligence"}/>
@@ -68,13 +87,27 @@ function App() {
                         {showChoice && <ChoiceComponent choice={currentChoice}
                                                         updatePlayer={setPlayer}
                                                         choose={choose}
-                                                        choiceList={choiceLoader?.choices.get(Majors.ComputerScience)}/>}
-                        {!showChoice && <Loading type={"gradient"} size={"xl"} css={{display: "flex", justifyContent: "center", height: "100%"}}/>}
+                                                        choiceList={player?.choiceLoader?.choices.get(Majors.ComputerScience)}/>}
+                        {!showChoice && <Loading type={"gradient"} size={"xl"}
+                                                 css={{display: "flex", justifyContent: "center", height: "100%"}}/>}
                     </Sidebar>
-                </Card.Body>
+                </Card.Body>}
+                {!player && <Card.Body>
+                    <Text h2 css={{m: "0 auto"}}>First, Pick a Major!</Text>
+                    <div className={"startDropdown"}>
+                        <MajorsCarousel changeMajor={changeMajor}/>
+                    </div>
+                    <Text css={{w: "60%", m: "0 auto", ta: "center", color: "gray"}}>There are advantages and disadvantages to each that you will discover along the way.</Text>
+                    <Button color={"gradient"} css={{w: "50%", m: "20px auto"}} onPress={() => {
+                        const player = Player.newPlayer(major);
+                        const choice = player.getChoice()
+                        setPlayer(player);
+                        if (choice) setCurrentChoice(choice);
+                        console.log(player.choiceLoader)
+                    }}>Begin College</Button>
+                </Card.Body>}
             </Card>
-    </Container>
-  );
+        </Container>)
 }
 
 export default App;

@@ -9,7 +9,12 @@ class ChoiceLoader {
     choices: Map<Majors, ChoiceList> = new Map();
 
 
-    constructor() {
+    constructor(choices?: Map<Majors, ChoiceList>) {
+        if (choices) {
+            this.choices = choices;
+            return;
+        }
+
         for (let major in allChoices) {
             this.choices.set(MajorFromString(major), this.loadAllChoices(major));
         }
@@ -43,6 +48,38 @@ class ChoiceLoader {
         }
 
         return allChoices;
+    }
+
+    public getJSON() {
+        const allChoices = Array.from(this.choices.entries())
+        return allChoices.map((choice) => {
+            return {
+                id: choice[0],
+                choices: choice[1].getJSON()
+            }
+        })
+    }
+
+    public static choiceFromID(id: string) {
+        for (let major in allChoices) {
+            const majorJSON = allChoices[major as keyof typeof allChoices]
+            for (let choices in majorJSON) {
+                const choiceJSON = majorJSON[choices as keyof typeof majorJSON]
+                if (choices === id) {
+                    // @ts-ignore
+                    return Choice.fromJson(choiceJSON, id)
+                }
+            }
+        }
+    }
+
+    public static fromJSON(choiceLists: {id: string, choices: {choicesLeft: string[], loadableChoices: {id: string, loadId: string}[]}}[]) {
+        const choices: Map<Majors, ChoiceList> = new Map();
+        choiceLists.forEach((choice) => {
+            const major = MajorFromString(Majors[parseInt(choice.id)])
+            choices.set(major, ChoiceList.fromJSON(major.toString(), {choicesLeft: choice.choices.choicesLeft, loadableChoices: choice.choices.loadableChoices}))
+        })
+        return new ChoiceLoader(choices)
     }
 }
 

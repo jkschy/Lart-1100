@@ -43,7 +43,7 @@ const isKarma = (karma: string) => {
 enum Majors {
     ComputerScience,
     Nursing,
-    Engineering,
+    Education,
     Business,
 }
 

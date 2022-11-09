@@ -25,7 +25,8 @@ const ChoiceComponent = (props: ChoiceProps) => {
             decision.effetedStat.forEach((stat, index) => {
                 if (isKarma(stat)) {
                     props.updatePlayer((player) => {
-                        return player.updateKarma(KarmaFromString(stat), decision.amountChange[index]);
+                        player?.updateKarma(KarmaFromString(stat), decision.amountChange[index]);
+                        return player;
                     })
                 }
             })
@@ -67,10 +68,9 @@ const ChoiceComponent = (props: ChoiceProps) => {
 
 interface ChoiceProps {
     choice: Choice | undefined
-    updatePlayer:  React.Dispatch<React.SetStateAction<Player>>,
+    updatePlayer:  React.Dispatch<React.SetStateAction<Player | undefined>>,
     choiceList: ChoiceList | undefined,
     choose: () => void;
 }
-
 
 export default ChoiceComponent

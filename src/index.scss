@@ -1,6 +1,7 @@
 @import "styles/MoreMenu/MoreMenu";
 @import "styles/sidebar/Sidebar";
 @import "styles/animations";
+@import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 body {
   margin: 0;
@@ -72,4 +73,9 @@ code {
 .flex-column {
   display: flex;
   flex-direction: column;
+}
+
+.startDropdown {
+  width: 20%;
+  margin: 20px auto;
 }

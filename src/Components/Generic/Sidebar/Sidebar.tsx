@@ -10,7 +10,7 @@ const Sidebar = (props: SidebarProps) => {
     const study = () => {
         const timeAvailable = props.player.useFreeTime(1);
         if (timeAvailable) {
-            props.updatePlayer(timeAvailable.setIntelligence(10));
+            props.updatePlayer(() => timeAvailable.setIntelligence(10))
         }
 
         //Add notification or something
@@ -19,7 +19,7 @@ const Sidebar = (props: SidebarProps) => {
     const work = () => {
         const timeAvailable = props.player.useFreeTime(1);
         if (timeAvailable) {
-            props.updatePlayer(timeAvailable.addMoney(8));
+            props.updatePlayer(() => timeAvailable?.addMoney(8))
         }
 
         //Add notification or something
@@ -54,7 +54,7 @@ const Sidebar = (props: SidebarProps) => {
 
 interface SidebarProps {
     player: Player,
-    updatePlayer: React.Dispatch<React.SetStateAction<Player>>,
+    updatePlayer: React.Dispatch<React.SetStateAction<Player | undefined>>,
     children?: React.ReactNode
 }
 

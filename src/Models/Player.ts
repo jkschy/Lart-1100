@@ -1,5 +1,6 @@
 import {randomNumberBetween} from "../Utils/Utils";
-import {Karma} from "../Utils/Enums";
+import {Karma, MajorFromString} from "../Utils/Enums";
+import ChoiceLoader from "../Utils/ChoiceLoader";
 
 export interface IPlayer {
     name: string,
@@ -10,12 +11,13 @@ export interface IPlayer {
     popularity: number,
     freeTime: number,
     money: number,
+    choiceLoader: ChoiceLoader,
 }
 
 class Player {
     private readonly player: IPlayer;
 
-    private constructor(name: string, year: number, major: string, intelligence: number, integrity: number, popularity: number, freeTime: number, money: number) {
+    private constructor(name: string, year: number, major: string, intelligence: number, integrity: number, popularity: number, freeTime: number, money: number, choiceLoader: ChoiceLoader) {
         this.player = {
             name: name,
             year: year,
@@ -25,7 +27,10 @@ class Player {
             popularity: parseInt(popularity.toString()),
             freeTime: freeTime,
             money: money,
+            choiceLoader: choiceLoader,
         }
+
+        this.saveToLocalStorage();
     }
 
     public updateKarma(karmaName: Karma, amountChange: number) {
@@ -37,6 +42,7 @@ class Player {
             case Karma.popularity:
                 return this.setPopularity(amountChange);
         }
+        return Player.fromPlayer(this.player)
     }
 
     public setPopularity(amountChange: number) {
@@ -46,8 +52,7 @@ class Player {
         } else {
             this.player.popularity += num;
         }
-
-        return Player.fromPlayer(this.player);
+        return Player.fromPlayer(this.player)
     }
 
     public setIntelligence(amountChange: number) {
@@ -59,8 +64,7 @@ class Player {
         } else {
             this.player.intelligence += num;
         }
-
-        return Player.fromPlayer(this.player);
+        return Player.fromPlayer(this.player)
     }
 
     public setIntegrity(amountChange: number) {
@@ -70,8 +74,7 @@ class Player {
         } else {
             this.player.integrity += num
         }
-
-        return Player.fromPlayer(this.player);
+        return Player.fromPlayer(this.player)
     }
 
     public useMoney(amountUse: number) {
@@ -81,14 +84,14 @@ class Player {
         }
 
         this.player.money -= num;
-        return Player.fromPlayer(this.player);
+        return Player.fromPlayer(this.player)
     }
 
     public addMoney (amountToAdd: number) {
         const num = parseInt(amountToAdd.toString());
 
         this.player.money += num
-        return Player.fromPlayer(this.player);
+        return Player.fromPlayer(this.player)
     }
 
     public useFreeTime(hours: number) {
@@ -98,7 +101,16 @@ class Player {
             return false
         }
         this.player.freeTime = this.player.freeTime - num;
-        return Player.fromPlayer(this.player);
+        return Player.fromPlayer(this.player)
+    }
+
+    public getChoice() {
+        return this.player.choiceLoader.choices.get(MajorFromString(this.major.replaceAll(" ", "")))?.getChoice()
+    }
+
+    public newChoice() {
+        this.player.choiceLoader.choices.get(MajorFromString(this.major.replaceAll(" ", "")))?.getNewChoice()
+        this.saveToLocalStorage()
     }
 
 
@@ -155,16 +167,59 @@ class Player {
         return this.player.freeTime <= 0;
     }
 
+    public get choiceLoader() {
+        return this.player.choiceLoader
+    }
+
+    private getPlayerSave() {
+        return {
+            name: this.player.name,
+            year: this.player.year,
+            major: this.player.major,
+            intelligence: this.player.intelligence,
+            integrity: this.player.integrity,
+            popularity: this.player.popularity,
+            freeTime: this.player.freeTime,
+            money: this.player.money,
+        }
+    }
+
+    public saveToLocalStorage() {
+        window.localStorage.setItem("lartPlayer", JSON.stringify(this.getPlayerSave()));
+        const choicesJSON = JSON.stringify(this.player.choiceLoader.getJSON());
+        if (choicesJSON) {
+            window.localStorage.setItem("choices", choicesJSON);
+        }
+    }
+
     private static fromPlayer(player:IPlayer) {
-        return new Player(player.name, player.year, player.major, player.intelligence, player.integrity, player.popularity, player.freeTime, player.money);
+        return new Player(player.name, player.year, player.major, player.intelligence, player.integrity, player.popularity, player.freeTime, player.money, player.choiceLoader);
     }
 
-    public static existingPlayer(name: string, year: number, major: string, intelligence: number, integrity: number, popularity: number, freeTime: number, money: number) {
-        return new Player(name, year, major, intelligence, integrity, popularity, freeTime, money);
+
+    public static existingPlayer(name: string, year: number, major: string, intelligence: number, integrity: number, popularity: number, freeTime: number, money: number, choiceLoader: ChoiceLoader) {
+        return new Player(name, year, major, intelligence, integrity, popularity, freeTime, money, choiceLoader);
     }
 
-    public static newPlayer() {
-       return new Player("TestUser", 1, "ComputerScience", 50, randomNumberBetween(0, 100), randomNumberBetween(0, 100), 12, 100);
+    public static newPlayer(major?: string) {
+        const playerString = window.localStorage.getItem("lartPlayer");
+        const choices = window.localStorage.getItem("choices");
+
+        let player;
+        if (playerString && choices) {
+            player = JSON.parse(playerString);
+            player.choiceLoader = ChoiceLoader.fromJSON(JSON.parse(choices))
+        }
+
+        if (player) {
+            return this.existingPlayer(player.name, player.year, player.major, player.intelligence, player.integrity, player.popularity, player.freeTime, player.money, player.choiceLoader)
+        }
+
+       return new Player("TestUser", 1, major ? major.toString() : 'NULL', 50, randomNumberBetween(0, 100), randomNumberBetween(0, 100), 12, 100, new ChoiceLoader());
+    }
+
+    public static hasExistingPlayer() {
+        return !!window.localStorage.getItem("lartPlayer")
     }
 }
 

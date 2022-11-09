@@ -6,6 +6,21 @@
   animation: bounceIn 700ms ease-in-out normal forwards 1;
 }
 
+.fadeOut {
+  animation: fadeOut 700ms ease-in-out normal forwards 0;
+}
+
+@keyframes fadeOut {
+  from {
+    transform: none;
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+}
+
 @keyframes bounceIn {
   100% {
     transform: none
