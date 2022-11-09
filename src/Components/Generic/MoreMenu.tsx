@@ -1,6 +1,6 @@
 import { Squash as Hamburger } from 'hamburger-react'
 import {useState} from "react";
-import {Button, Spacer, Switch, Text} from "@nextui-org/react";
+import {Button, Modal, Spacer, Switch, Text} from "@nextui-org/react";
 
 const MoreMenu = (props: MMProps) => {
     const [open, setOpen] = useState(false);
@@ -12,11 +12,13 @@ const MoreMenu = (props: MMProps) => {
 
         <div className={`collapse ${open ? "open" : "closed"}`}>
             <Spacer/>
-            <Button className={`menu-item`}>Reset Game</Button>
+            <Button className={`menu-item`} onPress={() => {
+                window.localStorage.removeItem("lartPlayer");
+                window.location.reload();
+            }}>Reset Game</Button>
             <Spacer/>
             <Switch className={`menu-item`}/>
         </div>
-
         <div className={"content"}>
             {props.children}
         </div>
