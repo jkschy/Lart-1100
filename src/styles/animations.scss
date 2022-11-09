@@ -1,0 +1,62 @@
+.bounceOut {
+  animation: bounceOut 700ms ease-in-out normal forwards 1;
+}
+
+.bounceIn {
+  animation: bounceIn 700ms ease-in-out normal forwards 1;
+}
+
+.fadeOut {
+  animation: fadeOut 700ms ease-in-out normal forwards 0;
+}
+
+@keyframes fadeOut {
+  from {
+    transform: none;
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  100% {
+    transform: none
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  10% {
+    transform: scale(.7);
+  }
+  0% {
+    transform: none;
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes bounceOut {
+  0% {
+    transform: none
+  }
+  10% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(.7);
+  }
+  65% {
+    transform: scale(.7);
+    opacity: 0;
+  }
+  100% {
+    transform: none;
+    opacity: 0;
+    display: none;
+  }
+}
