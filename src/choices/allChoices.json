@@ -322,9 +322,6 @@
         "CS4": {
             "title": "Do you enjoy videogames?",
             "type": "twoChoice",
-            "trigger": {
-                "event": "start"
-            },
             "options": [
                 {
                     "name": "Yes",
@@ -341,9 +338,6 @@
         "CS5": {
             "title": "Are you going to get an internship?",
             "type": "twoChoice",
-            "trigger": {
-                "event": "start"
-            },
             "options": [
                 {
                     "name": "Yes",
@@ -360,9 +354,6 @@
         "CS6": {
             "title": "Do you want a BS or BA of computer science?",
             "type": "twoChoice",
-            "trigger": {
-                "event": "CS2"
-            },
             "options": [
                 {
                     "name": "BS",
@@ -399,8 +390,13 @@
                 },
                 {
                     "name": "For the money",
-                    "effectedStat": ["money"],
-                    "effectAmount": ["+20"]
+                    "effectedStat": ["money", "integrity"],
+                    "effectAmount": ["+20", "-10"]
+                },
+                {
+                    "name": "Television",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-5"]
                 }
             ]
         }
@@ -428,8 +424,7 @@
             ]
         }
     },
-
-    "Buisness": {
+    "Business": {
         "B1": {
             "title": "Do you have a clear specific goal for after graduation?",
             "description": "",

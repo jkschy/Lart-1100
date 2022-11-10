@@ -45,10 +45,31 @@ enum Majors {
     Nursing,
     Education,
     Business,
+    Random,
 }
 
 const MajorFromString = (major: string) => {
     return Majors[major as keyof typeof Majors];
+}
+
+const FreeTimeFromMajor = (major: Majors | string) => {
+    let majorType = major;
+    if (typeof major == "string") {
+        majorType = MajorFromString(major);
+    }
+
+    switch(majorType) {
+        case Majors.Business:
+            return 12
+        case Majors.Nursing:
+            return 5
+        case Majors.Education:
+            return 8
+        case Majors.ComputerScience:
+            return 10
+        default:
+            return 10
+    }
 }
 
 enum SpecialTrigger {
@@ -81,4 +102,5 @@ export {ChoiceTypesFromString,
     SpecialTrigger,
     isKarma,
     isPlayerInfo,
+    FreeTimeFromMajor,
     isSpecialTrigger};
