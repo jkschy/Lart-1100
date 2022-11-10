@@ -2,6 +2,7 @@
 @import "styles/sidebar/Sidebar";
 @import "styles/animations";
 @import "react-responsive-carousel/lib/styles/carousel.min.css";
+@import 'react-toastify/dist/ReactToastify.css';
 
 body {
   margin: 0;
@@ -29,6 +30,10 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.margin-center {
+  margin: 0 auto;
 }
 
 .CGap-medium {

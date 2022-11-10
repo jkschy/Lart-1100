@@ -4,7 +4,7 @@ import TooltipButton from "../TooltipButton";
 const ActionButtons = (props: ActionButtonProps) => {
 
     return <div className={"sidebar-actions"}>
-        <TooltipButton tooltipText={!props.hasFreeTime ? "Use 1 Free time to gain: 10 intelligence" : "No Free time :("} buttonProps={{size: "xs", onPress: props.study, disabled: props.hasFreeTime}}>
+        <TooltipButton tooltipText={!props.hasFreeTime ? "Play a game to earn (or lose) some intelligence" : "No Free time :("} buttonProps={{size: "xs", onPress: props.study, disabled: props.hasFreeTime}}>
             Study
         </TooltipButton>
 
