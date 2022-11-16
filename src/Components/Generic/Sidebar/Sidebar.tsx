@@ -11,23 +11,48 @@ import {randomNumberBetween} from "../../../Utils/Utils";
 const Sidebar = (props: SidebarProps) => {
     const createToast = useContext(ToastContext);
     const [showMiniGame, setShowMiniGame] = useState(false);
+    const [type, setType] = useState<"study" | "work">("work");
 
-    const addIntelligence = () => {
-        createToast("Successfully studied! gained 10 intelligence", "success");
-        props.updatePlayer((player) => player?.setIntelligence(10));
+    const pass = (amountLost?: number) => {
+        let amount = randomNumberBetween(8, 15);
+
+        if (type === "work") {
+            amount *= 10;
+        }
+
+        if (amountLost) {
+            amount -= amountLost;
+        }
+        createToast(`Successfully ${type === "study" ? "studied" : "worked" }! gained ${amount} ${type === "study" ?  "intelligence" : "money"}`, "success");
+
+        props.updatePlayer(player => {
+            if (type === "study") {
+                return player?.setIntelligence(amount)
+            } else {
+                return player?.addMoney(amount);
+            }
+        })
+
         setShowMiniGame(false);
     }
 
-    const failStudy = () => {
-        const amount = randomNumberBetween(1, 5);
-        createToast(`Failed to study lost ${amount} intelligence`, "error");
-        props.updatePlayer(player => player?.setIntelligence(-amount));
+
+    const fail = () => {
+        if (type === "study") {
+            const amount = randomNumberBetween(1, 5);
+            createToast(`Failed to ${type} lost ${amount} intelligence`, "error");
+            props.updatePlayer(player => player?.setIntelligence(amount));
+        } else {
+            createToast(`Failed to ${type}!`, "error");
+        }
+
         setShowMiniGame(false);
     }
 
     const study = () => {
         const timeAvailable = props.player.useFreeTime(1);
         if (timeAvailable) {
+            setType("study");
             props.updatePlayer(timeAvailable);
             setShowMiniGame(true);
             return;
@@ -39,6 +64,8 @@ const Sidebar = (props: SidebarProps) => {
     const work = () => {
         const timeAvailable = props.player.useFreeTime(1);
         if (timeAvailable) {
+            setType("work");
+            setShowMiniGame(true);
             props.updatePlayer(() => timeAvailable?.addMoney(8))
             return;
         }
@@ -64,7 +91,7 @@ const Sidebar = (props: SidebarProps) => {
                         <ActionButtons study={study} work={work} hasFreeTime={props.player.hasFreeTime}/>
                     </SidebarItem>
                     <Spacer y={.3}/>
-                    {showMiniGame && <RandomMiniGame onPass={addIntelligence} onFail={failStudy}/>}
+                    {showMiniGame && <RandomMiniGame onPass={pass} onFail={fail} type={type}/>}
                 </Card.Body>
             </Card>
             <div className={"sidebar-content"}>

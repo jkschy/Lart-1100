@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(
 );
 
 const showToast = (message: string, type?: TypeOptions) => {
-    toast(message, {type: type})
+    toast(message, {type: type, theme: "dark"})
 }
 
 
