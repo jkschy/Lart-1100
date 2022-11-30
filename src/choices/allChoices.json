@@ -4,9 +4,6 @@
             "title": "Do you want to go to the CAB event?",
             "description": "Cab events are fun but they take tie out of your day",
             "type": "twoChoice",
-            "trigger": {
-                "event": "Start"
-            },
             "options": [
                 {
                     "name": "Yes",
@@ -24,9 +21,6 @@
             "title": "Do you want to go to the party off campus?",
             "description": "A party off campus can be fun but is it worth the risk?",
             "type": "twoChoice",
-            "trigger": {
-                "event": "Start"
-            },
             "options": [
                 {
                     "name": "Yes",
@@ -44,9 +38,6 @@
             "title": "What sport do you want to join?",
             "description": "Coach needs another player choose what sport you want to play.",
             "type": "fourChoice",
-            "trigger": {
-                "event": "Start"
-            },
             "options": [
                 {
                     "name": "Football",
@@ -74,9 +65,6 @@
             "title": "Who do you want your friends to be?",
             "description": "",
             "type": "threeChoice",
-            "trigger": {
-                "event": "Start"
-            },
             "options": [
                 {
                     "name": "Fun and irresponsible",
@@ -99,9 +87,6 @@
             "title": "Did you come to college with your significant other?",
             "description": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": "Start"
-            },
             "options": [
                 {
                     "name": "Yes",
@@ -119,9 +104,6 @@
             "title": "Your roomate is very mess how do you handle the situation?",
             "description": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": "Start"
-            },
             "options": [
                 {
                     "name": "Confront them in a polite way",
@@ -139,9 +121,6 @@
             "title": "Your friends start going to places without you.",
             "description": "How do you handle this situation?",
             "type": "twoChoice",
-            "trigger": {
-                "event": "Start"
-            },
             "options": [
                 {
                     "name": "Make new friends",
@@ -159,9 +138,6 @@
             "title": "A person of the opposite sex wants to go to third base.",
             "description": "Do you do it?",
             "type": "twoChoice",
-            "trigger": {
-                "event": "Start"
-            },
             "options": [
                 {
                     "name": "Yes",
@@ -179,9 +155,6 @@
             "title": "You are offered a smoke at a party.",
             "description": "Do you do it?",
             "type": "twoChoice",
-            "trigger": {
-                "event": "Start"
-            },
             "options": [
                 {
                     "name": "Yes",
@@ -199,9 +172,6 @@
             "title": "you are offered a drink at a party.",
             "description": "Do you take it?",
             "type": "twoChoice",
-            "trigger": {
-                "event": "Start"
-            },
             "options": [
                 {
                     "name": "Yes",
@@ -219,9 +189,6 @@
             "title": "Do you go to chapel this morning?",
             "description": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": "Start"
-            },
             "options": [
                 {
                     "name": "Yes",
@@ -239,9 +206,6 @@
             "title": "Do you want to sleep in or go to class?",
             "description": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": "Start"
-            },
             "options": [
                 {
                     "name": "Sleep in",
