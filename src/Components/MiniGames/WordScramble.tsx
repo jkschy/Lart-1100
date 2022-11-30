@@ -2,13 +2,13 @@ import {Button, Modal, Input, Text, Tooltip} from "@nextui-org/react";
 import {WORDS} from "./assets/Wordlist";
 import {randomNumberBetween, shuffleArray} from "../../Utils/Utils";
 import {TiArrowShuffle} from "react-icons/ti"
-import {MutableRefObject, useEffect, useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 
 const WordScramble = (props: WordScrambleProps) => {
     const [word, setWord] = useState("");
     const [wordScramble, setWordScramble] = useState<any[]>([]);
     const [triesLeft, setTriesLeft] = useState(3);
-    const [hasError, setErorr] = useState(false);
+    const [hasError, setError] = useState(false);
 
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -16,16 +16,17 @@ const WordScramble = (props: WordScrambleProps) => {
 
     const error = () => {
         inputRef.current?.classList.add('errorSlide');
-        setErorr(true);
+        setGuess("");
+        setError(true);
         setTimeout(() => inputRef.current?.classList.remove('errorSlide'), 1000);
     }
 
     const onSubmit = () => {
-        if (guess === word) {
+        if (guess === word && guess && word ) {
             props.onPass();
         } else {
             setTriesLeft(triesLeft => {
-                if (triesLeft > 0) {
+                if (triesLeft > 1) {
                     error();
                     return --triesLeft
                 }
@@ -66,11 +67,13 @@ const WordScramble = (props: WordScrambleProps) => {
                 <Text h3 css={{ta: "center"}}>{wordScramble.join(" ")}</Text>
                 <Input placeholder={"Unscrambled Word"}
                        bordered
+                       value={guess}
                        size={"lg"}
                        status={hasError ? "error" : "default"}
                        ref={inputRef}
                        helperText={`${triesLeft}/3 tries left`}
-                       onChange={(e) => setGuess(e.target.value)}
+                       onKeyDown={(e) => {if (e.key === "Enter") onSubmit()}}
+                       onChange={(e) => {setGuess(e.target.value)}}
                        contentLeft={<Tooltip content={"Get new word: -5$"}
                                              placement={"topEnd"}
                                              css={{zIndex: "100000"}}>
@@ -80,6 +83,9 @@ const WordScramble = (props: WordScrambleProps) => {
                        </Tooltip>}/>
             </Modal.Body>
             <Modal.Footer>
+                <Tooltip content={"Lose some Integrity"} css={{marginRight: "auto", zIndex:"100000"}} placement={"bottom"}>
+                    <Button size={"xs"} auto color={"secondary"} css={{float: "left"}} onMouseDown={() => console.log("down")}>Cheat</Button>
+                </Tooltip>
                 <Tooltip content={"Lose some Intelligence"} css={{zIndex: "100000"}} placement={"bottom"}>
                     <Button auto color={"error"} onPress={onCancel}>Cancel</Button>
                 </Tooltip>

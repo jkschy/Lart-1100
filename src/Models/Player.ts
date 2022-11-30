@@ -87,7 +87,7 @@ class Player {
         return Player.fromPlayer(this.player)
     }
 
-    public addMoney (amountToAdd: number) {
+    public addMoney(amountToAdd: number) {
         const num = parseInt(amountToAdd.toString());
 
         this.player.money += num
