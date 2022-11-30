@@ -365,7 +365,7 @@
     },
 
     "Nursing": {
-        "CS1": {
+        "N1": {
             "title": "C1",
             "description": "",
             "type": "twoChoice",
@@ -385,7 +385,7 @@
                 }
             ]
         },
-        "CS2": {
+        "N2": {
             "title": "C2",
             "description": "",
             "type": "twoChoice",
@@ -405,7 +405,7 @@
                 }
             ]
         },
-        "CS3": {
+        "N3": {
             "title": "C3",
             "description": "",
             "type": "twoChoice",
@@ -425,7 +425,7 @@
                 }
             ]
         },
-        "CS4": {
+        "N4": {
             "title": "C4",
             "description": "",
             "type": "twoChoice",
@@ -445,7 +445,7 @@
                 }
             ]
         },
-        "CS5": {
+        "N5": {
             "title": "C5",
             "descriptin": "",
             "type": "twoChoice",
@@ -465,7 +465,7 @@
                 }
             ]
         },
-        "CS6": {
+        "N6": {
             "title": "C6",
             "description": "",
             "type": "twoChoice",
@@ -485,7 +485,7 @@
                 }
             ]
         },
-        "CS7": {
+        "N7": {
             "title": "C7",
             "description": "",
             "type": "twoChoice",
@@ -505,7 +505,7 @@
                 }
             ]
         },
-        "CS8": {
+        "N8": {
             "title": "C8",
             "description": "",
             "type": "twoChoice",
@@ -525,7 +525,7 @@
                 }
             ]
         },
-        "CS9": {
+        "N9": {
             "title": "C9",
             "description": "",
             "type": "twoChoice",
