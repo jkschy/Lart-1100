@@ -63,6 +63,10 @@ class ChoiceList {
         return this.choices.length;
     }
 
+    public get allChoices() {
+        return this.choices;
+    }
+
     public getJSON() {
         return {
             "choicesLeft": this.choices.map((choice) => choice.choiceID),

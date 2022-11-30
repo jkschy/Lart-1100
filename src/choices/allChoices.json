@@ -4,9 +4,6 @@
             "title": "R1",
             "description": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": ""
-            },
             "options": [
                 {
                     "name": "1",
@@ -24,9 +21,6 @@
             "title": "R2",
             "description": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": ""
-            },
             "options": [
                 {
                     "name": "1",
@@ -84,9 +78,6 @@
             "title": "R5",
             "descriptin": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": ""
-            },
             "options": [
                 {
                     "name": "1",
@@ -104,9 +95,6 @@
             "title": "R6",
             "description": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": ""
-            },
             "options": [
                 {
                     "name": "1",
@@ -124,9 +112,6 @@
             "title": "R7",
             "description": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": ""
-            },
             "options": [
                 {
                     "name": "1",
@@ -144,9 +129,6 @@
             "title": "R8",
             "description": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": ""
-            },
             "options": [
                 {
                     "name": "1",
@@ -164,9 +146,6 @@
             "title": "R9",
             "description": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": ""
-            },
             "options": [
                 {
                     "name": "1",
@@ -186,9 +165,6 @@
             "title": "C1",
             "description": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": ""
-            },
             "options": [
                 {
                     "name": "1",
@@ -206,9 +182,6 @@
             "title": "C2",
             "description": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": ""
-            },
             "options": [
                 {
                     "name": "1",
@@ -226,9 +199,6 @@
             "title": "C3",
             "description": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": ""
-            },
             "options": [
                 {
                     "name": "1",
