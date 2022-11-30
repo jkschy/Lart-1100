@@ -16,6 +16,7 @@ class ChoiceList {
             this.choices = choices;
             this.currentChoice = this.choices[0];
         }
+
         if (shuffle) {
             choices = this.getAllLoadableChoices(choices);
             const startChoice = this.getStartElementIfExists(choices);
@@ -44,7 +45,9 @@ class ChoiceList {
         loadChoices.forEach((choice) => {
             if (choice.choiceTrigger) {
                 choices = removeItemFromArray(allChoices, choice);
-                this.loadableChoices.set(choice.choiceTrigger?.triggerEvent.toString(), choice)
+                if (choice.choiceTrigger?.triggerEvent) {
+                    this.loadableChoices.set(choice.choiceTrigger?.triggerEvent.toString(), choice)
+                }
             }
         });
         return shuffleArray(choices);
