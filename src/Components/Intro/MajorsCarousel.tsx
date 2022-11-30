@@ -6,9 +6,7 @@ const MajorsCarousel = (props: MajorsProps) => {
     const [major, setMajor] = useState(0);
     const majors = Object.keys(Majors).splice(0, Object.keys(Majors).length / 2)
 
-    useEffect(() => {
-        props.changeMajor(fromPascalCase(major.toString()))
-    }, [major])
+    const {changeMajor} = props;
 
     const fromPascalCase = (value: string) => {
         return getMajorFromKey(value).toString().replaceAll(/([A-Z])/g, ' $1').trim();
@@ -18,13 +16,17 @@ const MajorsCarousel = (props: MajorsProps) => {
         return Majors[key as keyof typeof Majors]
     }
 
+    useEffect(() => {
+        changeMajor(fromPascalCase(major.toString()))
+    }, [major, changeMajor])
+
 
     return <Dropdown>
         <Dropdown.Button>
             {fromPascalCase(major.toString())}
         </Dropdown.Button>
         <Dropdown.Menu onAction={(keys) => setMajor(getMajorFromKey(keys.toString()))}>
-            {majors.map(major => {
+            {majors.filter(ele => ele !== "4").map(major => {
             return <Dropdown.Item key={getMajorFromKey(major)}>{fromPascalCase(major)}</Dropdown.Item>})}
         </Dropdown.Menu>
     </Dropdown>

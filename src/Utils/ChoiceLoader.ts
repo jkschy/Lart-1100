@@ -18,11 +18,13 @@ class ChoiceLoader {
         for (let major in allChoices) {
             this.choices.set(MajorFromString(major), this.loadAllChoices(major));
         }
+
+
     }
 
     private loadAllChoices(major: string) {
         const majorJSON = allChoices[major as keyof typeof allChoices]
-        return new ChoiceList(major, this.convertToChoices(majorJSON));
+        return new ChoiceList(major, this.convertToChoices(majorJSON), true);
     }
 
     private convertToChoices(choices: object) {

@@ -2,9 +2,9 @@ import {Button, Card, Text, Tooltip} from "@nextui-org/react";
 import Choice from "../../Models/Choice";
 import Player from "../../Models/Player";
 import Decision from "../../Models/Decision";
-import {isKarma, KarmaFromString} from "../../Utils/Enums";
+import {isKarma, KarmaFromString, PlayerInfo, PlayerInfoFromString} from "../../Utils/Enums";
 import React, {useEffect, useRef, useState} from "react";
-import {toTitleCase} from "../../Utils/Utils";
+import {randomNumberBetween, toTitleCase} from "../../Utils/Utils";
 import ChoiceList from "../../Models/ChoiceList";
 import choiceList from "../../Models/ChoiceList";
 
@@ -20,12 +20,26 @@ const ChoiceComponent = (props: ChoiceProps) => {
     const handleClick = (decision: Decision) => {
         choice.current?.classList.remove("bounceOut");
         choice.current?.classList.remove("bounceIn");
+        props.updatePlayer(player => {
+            return player?.addFreeTime().setIntelligence(-randomNumberBetween(4, 9));
+        })
 
         if (!decision.loadChoice) {
             decision.effetedStat.forEach((stat, index) => {
                 if (isKarma(stat)) {
                     props.updatePlayer((player) => {
                         player?.updateKarma(KarmaFromString(stat), decision.amountChange[index]);
+                        return player;
+                    })
+                } else {
+                    props.updatePlayer(player => {
+                        switch (PlayerInfoFromString(stat)) {
+                            case PlayerInfo.money:
+                                player?.addMoney(decision.amountChange[index]);
+                                break;
+                            default:
+                                break;
+                        }
                         return player;
                     })
                 }
@@ -50,16 +64,20 @@ const ChoiceComponent = (props: ChoiceProps) => {
             <Card.Header>
                 <Text b color={"black"}>{currentChoice?.title}</Text>
             </Card.Header>
+
             <Card.Body>
                 <Text color={"black"}>{currentChoice?.description}</Text>
             </Card.Body>
-            <Card.Footer css={{d: "flex", jc: "space-evenly"}}>
+
+            <Card.Footer css={{d: "grid", gridTemplateColumns: "1fr 1fr", gridAutoRows: "1fr", rowGap: "15px"}} >
                 {currentChoice?.getDecisions().map((decision) => {
-                    return <Tooltip content={decision.tooltipText}>
-                        <Button onPress={() => {
-                            handleClick(decision)
-                        }}>{toTitleCase(decision.name)}</Button>
-                    </Tooltip>
+                    return <div className={"margin-center"}>
+                            <Tooltip content={decision.tooltipText} placement={currentChoice?.getDecisions().indexOf(decision) <= 1 ? "top" : "bottom"}>
+                                <Button onPress={() => {
+                                    handleClick(decision)
+                                }}>{toTitleCase(decision.name)}</Button>
+                            </Tooltip>
+                        </div>
                 })}
             </Card.Footer>
         </Card>

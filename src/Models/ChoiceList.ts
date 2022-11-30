@@ -1,6 +1,6 @@
 import Choice from "./Choice";
 import {addItemToArrayLocation, removeItemFromArray, shuffleArray} from "../Utils/Utils";
-import {Majors, SpecialTrigger} from "../Utils/Enums";
+import {SpecialTrigger} from "../Utils/Enums";
 import ChoiceLoader from "../Utils/ChoiceLoader";
 
 class ChoiceList {
@@ -9,20 +9,22 @@ class ChoiceList {
     private major: string
     private currentChoice: Choice;
 
-    constructor(major: string, choices: Choice[], loadableChoices?: Map<string, Choice>) {
+    constructor(major: string, choices: Choice[], shuffle: boolean, loadableChoices?: Map<string, Choice>) {
         this.major = major;
         if (loadableChoices) {
             this.loadableChoices = loadableChoices;
             this.choices = choices;
             this.currentChoice = this.choices[0];
         }
-
-        choices = this.getAllLoadableChoices(choices);
-        const startChoice = this.getStartElementIfExists(choices);
-        if (startChoice) {
-            choices = removeItemFromArray(choices, startChoice);
-            choices = addItemToArrayLocation(choices, startChoice, 0);
+        if (shuffle) {
+            choices = this.getAllLoadableChoices(choices);
+            const startChoice = this.getStartElementIfExists(choices);
+            if (startChoice) {
+                choices = removeItemFromArray(choices, startChoice);
+                choices = addItemToArrayLocation(choices, startChoice, 0);
+            }
         }
+
         this.choices = choices;
         this.currentChoice = this.choices[0];
     }
@@ -82,11 +84,11 @@ class ChoiceList {
         choiceList.loadableChoices.forEach((choices) => {
             const parsedChoice = ChoiceLoader.choiceFromID(choices.id);
             if (parsedChoice) {
-                loadableChoices.set(choices.id, parsedChoice);
+                loadableChoices.set(choices.loadId, parsedChoice);
 
             }
         })
-        return new ChoiceList(major, allChoices, loadableChoices)
+        return new ChoiceList(major, allChoices, false, loadableChoices)
     }
 }
 
