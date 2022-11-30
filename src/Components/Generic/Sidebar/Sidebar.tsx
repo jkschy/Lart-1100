@@ -65,8 +65,8 @@ const Sidebar = (props: SidebarProps) => {
         const timeAvailable = props.player.useFreeTime(1);
         if (timeAvailable) {
             setType("work");
+            props.updatePlayer(() => timeAvailable)
             setShowMiniGame(true);
-            props.updatePlayer(() => timeAvailable?.addMoney(8))
             return;
         }
 
@@ -83,7 +83,7 @@ const Sidebar = (props: SidebarProps) => {
                     <Divider x={.8}/>
                     <SidebarItem title={"Free Time"} value={`${props.player.freeTime} Hours`} color={"warning"}/>
                     <SidebarItem title={"Money"} value={`$${props.player.money}`} color={"success"}/>
-                    <SidebarItem title={"GPA"} value={"3.3"} color={"secondary"}/>
+                    <SidebarItem title={"Exam:"} value={"50%"} color={"secondary"}/>
                     <SidebarItem title={"Job"}>
                         <JobDropdown/>
                     </SidebarItem>

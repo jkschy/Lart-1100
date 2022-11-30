@@ -2,7 +2,7 @@ import {Button, Modal, Input, Text, Tooltip} from "@nextui-org/react";
 import {WORDS} from "./assets/Wordlist";
 import {randomNumberBetween, shuffleArray} from "../../Utils/Utils";
 import {TiArrowShuffle} from "react-icons/ti"
-import {MutableRefObject, useEffect, useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 
 const WordScramble = (props: WordScrambleProps) => {
     const [word, setWord] = useState("");
@@ -84,7 +84,7 @@ const WordScramble = (props: WordScrambleProps) => {
             </Modal.Body>
             <Modal.Footer>
                 <Tooltip content={"Lose some Integrity"} css={{marginRight: "auto", zIndex:"100000"}} placement={"bottom"}>
-                    <Button size={"xs"} auto color={"secondary"} css={{marginRight: "auto"}}>Cheat</Button>
+                    <Button size={"xs"} auto color={"secondary"} css={{float: "left"}} onMouseDown={() => console.log("down")}>Cheat</Button>
                 </Tooltip>
                 <Tooltip content={"Lose some Intelligence"} css={{zIndex: "100000"}} placement={"bottom"}>
                     <Button auto color={"error"} onPress={onCancel}>Cancel</Button>

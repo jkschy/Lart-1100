@@ -6,7 +6,7 @@ import Typing from "./Typing";
 const RandomMiniGame = ({onPass, onFail, type}: RandomMiniGameProps) => {
     const [open, setOpen] = useState(true);
 
-    const MAXIMUM_LOSS = 50;
+    const MAXIMUM_LOSS = 80;
 
     const onSuccess = (amountLost?: number) => {
         setOpen(false);

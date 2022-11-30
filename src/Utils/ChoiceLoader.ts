@@ -18,6 +18,8 @@ class ChoiceLoader {
         for (let major in allChoices) {
             this.choices.set(MajorFromString(major), this.loadAllChoices(major));
         }
+
+
     }
 
     private loadAllChoices(major: string) {
