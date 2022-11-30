@@ -365,28 +365,183 @@
     },
 
     "Nursing": {
-        "N1": {
-            "title": "Why do you want to be a nurse?",
+        "CS1": {
+            "title": "C1",
             "description": "",
-            "type": "threeChoice",
+            "type": "twoChoice",
             "trigger": {
                 "event": "Start"
             },
             "options": [
                 {
-                    "name": "My family does it.",
+                    "name": "1",
                     "effectedStat": ["intelligence"],
-                    "effectAmount": ["+20"]
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "I like to help people.",
+                    "name": "2",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS2": {
+            "title": "C2",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
                     "effectedStat": ["popularity"],
-                    "effectAmount": ["+20"]
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS3": {
+            "title": "C3",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "For the money",
-                    "effectedStat": ["money"],
-                    "effectAmount": ["+20"]
+                    "name": "2",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS4": {
+            "title": "C4",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS5": {
+            "title": "C5",
+            "descriptin": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS6": {
+            "title": "C6",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS7": {
+            "title": "C7",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS8": {
+            "title": "C8",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS9": {
+            "title": "C9",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["-10"]
                 }
             ]
         }
@@ -416,8 +571,8 @@
     },
 
     "Buisness": {
-        "B1": {
-            "title": "Do you have a clear specific goal for after graduation?",
+        "CS1": {
+            "title": "C1",
             "description": "",
             "type": "twoChoice",
             "trigger": {
@@ -425,14 +580,174 @@
             },
             "options": [
                 {
-                    "name": "Yes",
-                    "effectedStat": ["money", "intelligence"],
-                    "effectAmount": ["+10", "+10"]
+                    "name": "1",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "No",
-                    "effectedStat": ["money", "free time"],
-                    "effectAmount": ["-50", "-20"]
+                    "name": "2",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS2": {
+            "title": "C2",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS3": {
+            "title": "C3",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS4": {
+            "title": "C4",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS5": {
+            "title": "C5",
+            "descriptin": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS6": {
+            "title": "C6",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS7": {
+            "title": "C7",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS8": {
+            "title": "C8",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS9": {
+            "title": "C9",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": "Start"
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["-10"]
                 }
             ]
         }
