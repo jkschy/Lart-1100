@@ -68,7 +68,7 @@ class ChoiceLoader {
         return allChoices.map((choice) => {
             return {
                 id: choice[0],
-                choices: choice[1].getJSON()
+                choices: choice[1].getJSON(),
             }
         })
     }
