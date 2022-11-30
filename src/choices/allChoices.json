@@ -5,7 +5,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -25,7 +25,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -45,7 +45,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -65,7 +65,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -85,7 +85,7 @@
             "descriptin": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -105,7 +105,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -125,7 +125,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -145,7 +145,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -165,7 +165,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -187,7 +187,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -207,7 +207,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -227,7 +227,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -247,7 +247,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -267,7 +267,7 @@
             "descriptin": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -287,7 +287,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -307,7 +307,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -327,7 +327,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -347,7 +347,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -370,7 +370,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -390,7 +390,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -410,7 +410,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -430,7 +430,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -450,7 +450,7 @@
             "descriptin": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -470,7 +470,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -490,7 +490,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -510,7 +510,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -530,7 +530,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -553,7 +553,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -576,7 +576,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -596,7 +596,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -616,7 +616,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -636,7 +636,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -656,7 +656,7 @@
             "descriptin": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -676,7 +676,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -696,7 +696,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -716,7 +716,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
@@ -736,7 +736,7 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
