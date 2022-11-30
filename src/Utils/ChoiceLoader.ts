@@ -15,16 +15,27 @@ class ChoiceLoader {
             return;
         }
 
+        this.choices.set(Majors.Random, this.loadAllChoices("Random"));
+
         for (let major in allChoices) {
+            if (MajorFromString(major) === Majors.Random) {
+                continue;
+            }
+
             this.choices.set(MajorFromString(major), this.loadAllChoices(major));
         }
-
-
     }
 
     private loadAllChoices(major: string) {
         const majorJSON = allChoices[major as keyof typeof allChoices]
-        return new ChoiceList(major, this.convertToChoices(majorJSON), true);
+        const randomList = this.choices.get(Majors.Random);
+        let randomChoices: Choice[] = [];
+
+        if (randomList) {
+            randomChoices = randomList.allChoices;
+        }
+
+        return new ChoiceList(major, [...this.convertToChoices(majorJSON), ...randomChoices], true);
     }
 
     private convertToChoices(choices: object) {
