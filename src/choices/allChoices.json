@@ -1,333 +1,334 @@
 {
     "Random": {
         "R1": {
-            "title": "Do you want to go to the CAB event?",
-            "description": "Cab events are fun but they take tie out of your day",
+            "title": "R1",
+            "description": "",
             "type": "twoChoice",
             "options": [
                 {
-                    "name": "Yes",
-                    "effectedStat": ["happieness", "free time"],
-                    "effectAmount": ["+50", "-10"]
+                    "name": "1",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "No",
+                    "name": "2",
                     "effectedStat": ["intelligence"],
-                    "effectAmount": ["+20"]
+                    "effectAmount": ["-10"]
                 }
             ]
         },
         "R2": {
-            "title": "Do you want to go to the party off campus?",
-            "description": "A party off campus can be fun but is it worth the risk?",
+            "title": "R2",
+            "description": "",
             "type": "twoChoice",
             "options": [
                 {
-                    "name": "Yes",
+                    "name": "1",
                     "effectedStat": ["intelligence"],
-                    "effectAmount": ["-50"]
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "No",
-                    "effectedStat": ["ingerity"],
-                    "effectAmount": ["+20"]
+                    "name": "2",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["-10"]
                 }
             ]
         },
         "R3": {
-            "title": "What sport do you want to join?",
-            "description": "Coach needs another player choose what sport you want to play.",
-            "type": "fourChoice",
+            "title": "R3",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
             "options": [
                 {
-                    "name": "Football",
-                    "effectedStat": ["intelligence", "free time"],
-                    "effectAmount": ["-50", "-50"]
+                    "name": "1",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "Volleyball",
-                    "effectedStat": ["free time"],
-                    "effectAmount": ["-50"]
-                },
-                {
-                    "name": "Soccoe",
-                    "effectedStat": ["free time"],
-                    "effectAmount": ["-50"]
-                },
-                {
-                    "name": "None",
-                    "effectedStat": ["free time", "intelligence"],
-                    "effectAmount": ["+20", "+20"]
+                    "name": "2",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-10"]
                 }
             ]
         },
         "R4": {
-            "title": "Who do you want your friends to be?",
+            "title": "R4",
             "description": "",
-            "type": "threeChoice",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
             "options": [
                 {
-                    "name": "Fun and irresponsible",
-                    "effectedStat": ["popularity", "happieness", "ingerity"],
-                    "effectAmount": ["+50", "+50", "-20"]
+                    "name": "1",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "Rich and Not Smart",
-                    "effectedStat": ["intelligence", "money"],
-                    "effectAmount": ["-50", "+50"]
-                },
-                {
-                    "name": "Smart and Responsible",
-                    "effectedStat": ["intelligence", "money"],
-                    "effectAmount": ["+20", "+20"]
+                    "name": "2",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-10"]
                 }
             ]
         },
         "R5": {
-            "title": "Did you come to college with your significant other?",
-            "description": "",
+            "title": "R5",
+            "descriptin": "",
             "type": "twoChoice",
             "options": [
                 {
-                    "name": "Yes",
-                    "effectedStat": ["happieness", "free time"],
-                    "effectAmount": ["+50", "-50"]
+                    "name": "1",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "No",
+                    "name": "2",
                     "effectedStat": ["popularity"],
-                    "effectAmount": ["+20"]
+                    "effectAmount": ["-10"]
                 }
             ]
         },
         "R6": {
-            "title": "Your roomate is very mess how do you handle the situation?",
+            "title": "R6",
             "description": "",
             "type": "twoChoice",
             "options": [
                 {
-                    "name": "Confront them in a polite way",
-                    "effectedStat": ["happieness"],
-                    "effectAmount": ["+50"]
+                    "name": "1",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "Let it be",
-                    "effectedStat": ["popularity", "happieness"],
-                    "effectAmount": ["+20", "-20"]
+                    "name": "2",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-10"]
                 }
             ]
         },
         "R7": {
-            "title": "Your friends start going to places without you.",
-            "description": "How do you handle this situation?",
+            "title": "R7",
+            "description": "",
             "type": "twoChoice",
             "options": [
                 {
-                    "name": "Make new friends",
-                    "effectedStat": ["happieness", "free time"],
-                    "effectAmount": ["+50", "-20"]
+                    "name": "1",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "Hope they start inviting you",
-                    "effectedStat": ["happieness", "free time"],
-                    "effectAmount": ["-20", "+20"]
+                    "name": "2",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-10"]
                 }
             ]
         },
         "R8": {
-            "title": "A person of the opposite sex wants to go to third base.",
-            "description": "Do you do it?",
+            "title": "R8",
+            "description": "",
             "type": "twoChoice",
             "options": [
                 {
-                    "name": "Yes",
-                    "effectedStat": ["happieness"],
-                    "effectAmount": ["+50"]
+                    "name": "1",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "No",
-                    "effectedStat": ["money", "free time", "ingerity", "intelligence"],
-                    "effectAmount": ["-20", "+20", "+20", "+20"]
+                    "name": "2",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-10"]
                 }
             ]
         },
         "R9": {
-            "title": "You are offered a smoke at a party.",
-            "description": "Do you do it?",
-            "type": "twoChoice",
-            "options": [
-                {
-                    "name": "Yes",
-                    "effectedStat": ["popularity", "money", "intelligence"],
-                    "effectAmount": ["+5", "-10", "-20"]
-                },
-                {
-                    "name": "No",
-                    "effectedStat": ["happieness", "money", "ingerity"],
-                    "effectAmount": ["-20", "+20", "+20"]
-                }
-            ]
-        },
-        "R10": {
-            "title": "you are offered a drink at a party.",
-            "description": "Do you take it?",
-            "type": "twoChoice",
-            "options": [
-                {
-                    "name": "Yes",
-                    "effectedStat": ["popularity", "money", "ingerity"],
-                    "effectAmount": ["+5", "-10", "-20"]
-                },
-                {
-                    "name": "No",
-                    "effectedStat": ["intelligence", "ingerity"],
-                    "effectAmount": ["+20", "+20"]
-                }
-            ]
-        },
-        "R11": {
-            "title": "Do you go to chapel this morning?",
+            "title": "R9",
             "description": "",
             "type": "twoChoice",
             "options": [
                 {
-                    "name": "Yes",
-                    "effectedStat": ["happieness", "free time"],
-                    "effectAmount": ["-10", "-20"]
+                    "name": "1",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "No",
-                    "effectedStat": ["money", "ingerity"],
-                    "effectAmount": ["-20", "-20"]
-                }
-            ]
-        },
-        "R12": {
-            "title": "Do you want to sleep in or go to class?",
-            "description": "",
-            "type": "twoChoice",
-            "options": [
-                {
-                    "name": "Sleep in",
-                    "effectedStat": ["happieness"],
-                    "effectAmount": ["+20"]
-                },
-                {
-                    "name": "Go to class",
-                    "effectedStat": ["intelligence"],
-                    "effectAmount": ["+20"]
+                    "name": "2",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["-10"]
                 }
             ]
         }
     },
     "ComputerScience": {
         "CS1": {
-            "title": "What computer do you buy?",
-            "description": "As your first decision, you must pick the type of computer you want to buy... choose wisely!",
+            "title": "C1",
+            "description": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": "Start"
-            },
             "options": [
                 {
-                    "name": "Mac",
-                    "effectedStat": ["money", "intelligence"],
-                    "effectAmount": ["-1200", "-5"]
+                    "name": "1",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "Windows",
-                    "effectedStat": ["money", "intelligence"],
-                    "effectAmount": ["-500", "-20"]
+                    "name": "2",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-10"]
                 }
             ]
         },
         "CS2": {
-            "title": "Upgrade Computer",
-            "description": "You have made enough money to upgrade your computer if you want!",
+            "title": "C2",
+            "description": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": "StatChange",
-                "stat": "money",
-                "comparison": ">",
-                "amount": "1000"
-            },
             "options": [
                 {
-                    "name": "Yes",
-                    "load": "CS3",
-                    "tooltip": "Choose new Computer!"
+                    "name": "1",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "No",
-                    "effectedStat": ["popularity", "free time"],
-                    "effectAmount": ["-10", "-5"]
+                    "name": "2",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["-10"]
                 }
             ]
         },
         "CS3": {
-            "title": "What is your new computer",
+            "title": "C3",
+            "description": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": "CS2"
-            },
             "options": [
                 {
-                    "name": "Mac",
-                    "effectedStat": ["money", "free time"],
-                    "effectAmount": ["-800", "+5"]
+                    "name": "1",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "Windows",
-                    "effectedStat": ["money", "free time"],
-                    "effectAmount": ["-400", "-5"]
+                    "name": "2",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-10"]
                 }
             ]
         },
         "CS4": {
-            "title": "Do you enjoy videogames?",
+            "title": "C4",
+            "description": "",
             "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
             "options": [
                 {
-                    "name": "Yes",
-                    "effectedStat": ["intelligence", "free time"],
-                    "effectAmount": ["+50", "-50"]
+                    "name": "1",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "No",
-                    "effectedStat": ["ingerity"],
-                    "effectAmount": ["+20"]
+                    "name": "2",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-10"]
                 }
             ]
         },
         "CS5": {
-            "title": "Are you going to get an internship?",
+            "title": "C5",
+            "descriptin": "",
             "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
             "options": [
                 {
-                    "name": "Yes",
-                    "effectedStat": ["intelligence", "free time", "money"],
-                    "effectAmount": ["+20", "-20", "+50"]
+                    "name": "1",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "No",
-                    "effectedStat": ["free time"],
-                    "effectAmount": ["+20"]
+                    "name": "2",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["-10"]
                 }
             ]
         },
         "CS6": {
-            "title": "Do you want a BS or BA of computer science?",
+            "title": "C6",
+            "description": "",
             "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
             "options": [
                 {
-                    "name": "BS",
-                    "effectedStat": ["intelligence", "free time"],
-                    "effectAmount": ["+20", "-20"]
+                    "name": "1",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "BA",
-                    "effectedStat": ["money", "free time"],
-                    "effectAmount": ["+10", "+10"]
+                    "name": "2",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS7": {
+            "title": "C7",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS8": {
+            "title": "C8",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS9": {
+            "title": "C9",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["-10"]
                 }
             ]
         }
@@ -335,32 +336,182 @@
 
     "Nursing": {
         "N1": {
-            "title": "Why do you want to be a nurse?",
+            "title": "C1",
             "description": "",
-            "type": "threeChoice",
+            "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
-                    "name": "My family does it.",
+                    "name": "1",
                     "effectedStat": ["intelligence"],
-                    "effectAmount": ["+20"]
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "I like to help people.",
+                    "name": "2",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "N2": {
+            "title": "C2",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
                     "effectedStat": ["popularity"],
-                    "effectAmount": ["+20"]
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "N3": {
+            "title": "C3",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "For the money",
-                    "effectedStat": ["money", "integrity"],
-                    "effectAmount": ["+20", "-10"]
-                },
-                {
-                    "name": "Television",
+                    "name": "2",
                     "effectedStat": ["integrity"],
-                    "effectAmount": ["-5"]
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "N4": {
+            "title": "C4",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "N5": {
+            "title": "C5",
+            "descriptin": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "N6": {
+            "title": "C6",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "N7": {
+            "title": "C7",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "N8": {
+            "title": "C8",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "N9": {
+            "title": "C9",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["-10"]
                 }
             ]
         }
@@ -372,40 +523,201 @@
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
                     "name": "Yes",
-                    "effectedStat": ["happieness"],
+                    "effectedStat": ["intelligence"],
                     "effectAmount": ["+20"]
                 },
                 {
                     "name": "No",
-                    "effectedStat": ["happieness"],
+                    "effectedStat": ["intelligence"],
                     "effectAmount": ["-20"]
                 }
             ]
         }
     },
-    "Business": {
-        "B1": {
-            "title": "Do you have a clear specific goal for after graduation?",
+
+    "Buisness": {
+        "CS1": {
+            "title": "C1",
             "description": "",
             "type": "twoChoice",
             "trigger": {
-                "event": "Start"
+                "event": ""
             },
             "options": [
                 {
-                    "name": "Yes",
-                    "effectedStat": ["money", "intelligence"],
-                    "effectAmount": ["+10", "+10"]
+                    "name": "1",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
                 },
                 {
-                    "name": "No",
-                    "effectedStat": ["money", "free time"],
-                    "effectAmount": ["-50", "-20"]
+                    "name": "2",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS2": {
+            "title": "C2",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS3": {
+            "title": "C3",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS4": {
+            "title": "C4",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS5": {
+            "title": "C5",
+            "descriptin": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS6": {
+            "title": "C6",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS7": {
+            "title": "C7",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS8": {
+            "title": "C8",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "CS9": {
+            "title": "C9",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "2",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["-10"]
                 }
             ]
         }
