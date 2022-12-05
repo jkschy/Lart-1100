@@ -1,41 +1,47 @@
 {
     "Random": {
         "R1": {
-            "title": "R1",
+            "title": "Did you come to college with a girlfriend?",
             "description": "",
             "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
             "options": [
                 {
-                    "name": "1",
-                    "effectedStat": ["intelligence"],
-                    "effectAmount": ["+10"]
+                    "name": "No",
+                    "effectedStat": ["intelligence", "integrity"],
+                    "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "2",
-                    "effectedStat": ["intelligence"],
-                    "effectAmount": ["-10"]
+                    "name": "Yes",
+                    "effectedStat": ["intelligence", "popularity"],
+                    "effectAmount": ["-10", "+15"]
                 }
             ]
         },
         "R2": {
-            "title": "R2",
-            "description": "",
+            "title": "Do you want to go to chapel this monring?",
+            "description": "Chapel is important, but takes time.",
             "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
             "options": [
                 {
                     "name": "1",
-                    "effectedStat": ["intelligence"],
-                    "effectAmount": ["+10"]
+                    "effectedStat": ["intelligence", "integrity"],
+                    "effectAmount": ["+10", "-15"]
                 },
                 {
                     "name": "2",
-                    "effectedStat": ["popularity"],
-                    "effectAmount": ["-10"]
+                    "effectedStat": ["popularity", "integrity"],
+                    "effectAmount": ["-10", "+15"]
                 }
             ]
         },
         "R3": {
-            "title": "R3",
+            "title": "Do you want to go to a party off campus?",
             "description": "",
             "type": "twoChoice",
             "trigger": {
@@ -43,51 +49,54 @@
             },
             "options": [
                 {
-                    "name": "1",
-                    "effectedStat": ["intelligence"],
-                    "effectAmount": ["+10"]
+                    "name": "No",
+                    "effectedStat": ["intelligence", "popularity"],
+                    "effectAmount": ["+10", "-5"]
                 },
                 {
-                    "name": "2",
-                    "effectedStat": ["integrity"],
-                    "effectAmount": ["-10"]
+                    "name": "Yes",
+                    "effectedStat": ["integrity", "popularity"],
+                    "effectAmount": ["-10", "+15"]
                 }
             ]
         },
         "R4": {
-            "title": "R4",
-            "description": "",
+            "title": "Do you want to go to a cab event?",
+            "description": "Cab events are great ways to make new friends!",
             "type": "twoChoice",
             "trigger": {
                 "event": ""
             },
             "options": [
                 {
-                    "name": "1",
-                    "effectedStat": ["popularity"],
-                    "effectAmount": ["+10"]
+                    "name": "Yes",
+                    "effectedStat": ["popularity", "intelligence"],
+                    "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "2",
-                    "effectedStat": ["intelligence"],
-                    "effectAmount": ["-10"]
+                    "name": "No",
+                    "effectedStat": ["intelligence", "integrity"],
+                    "effectAmount": ["-10", "-15"]
                 }
             ]
         },
         "R5": {
-            "title": "R5",
+            "title": "You are offered a smoke at a party do you take it?",
             "descriptin": "",
             "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
             "options": [
                 {
-                    "name": "1",
-                    "effectedStat": ["popularity"],
-                    "effectAmount": ["+10"]
+                    "name": "Yes",
+                    "effectedStat": ["popularity", "integrity"],
+                    "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "2",
-                    "effectedStat": ["popularity"],
-                    "effectAmount": ["-10"]
+                    "name": "No",
+                    "effectedStat": ["popularity", "integrity"],
+                    "effectAmount": ["-10", "+15"]
                 }
             ]
         },
@@ -95,125 +104,106 @@
             "title": "R6",
             "description": "",
             "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
             "options": [
                 {
                     "name": "1",
-                    "effectedStat": ["popularity"],
-                    "effectAmount": ["+10"]
+                    "effectedStat": ["popularity", "intelligence"],
+                    "effectAmount": ["+10", "-15"]
                 },
                 {
                     "name": "2",
-                    "effectedStat": ["integrity"],
-                    "effectAmount": ["-10"]
+                    "effectedStat": ["integrity", "popularity"],
+                    "effectAmount": ["-10", "-15"]
                 }
             ]
         },
         "R7": {
-            "title": "R7",
+            "title": "Sleep in or go to class",
             "description": "",
             "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
             "options": [
                 {
-                    "name": "1",
-                    "effectedStat": ["integrity"],
-                    "effectAmount": ["+10"]
+                    "name": "Sleep in",
+                    "effectedStat": ["popularity", "integrity"],
+                    "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "2",
-                    "effectedStat": ["integrity"],
-                    "effectAmount": ["-10"]
+                    "name": "Go to class",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
                 }
             ]
         },
         "R8": {
-            "title": "R8",
+            "title": "Your friends want to cheat on a test with you.",
             "description": "",
             "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
             "options": [
                 {
-                    "name": "1",
-                    "effectedStat": ["integrity"],
-                    "effectAmount": ["+10"]
+                    "name": "Cheat",
+                    "effectedStat": ["integrity", "popularity"],
+                    "effectAmount": ["-10", "+15"]
                 },
                 {
-                    "name": "2",
-                    "effectedStat": ["intelligence"],
-                    "effectAmount": ["-10"]
+                    "name": "Snitch",
+                    "effectedStat": ["intelligence", "popularity"],
+                    "effectAmount": ["+10", "-15"]
                 }
             ]
         },
         "R9": {
-            "title": "R9",
+            "title": "A member of the opposite sex wants to go to third base do you do it?",
             "description": "",
             "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
             "options": [
                 {
-                    "name": "1",
-                    "effectedStat": ["integrity"],
-                    "effectAmount": ["+10"]
+                    "name": "Yes",
+                    "effectedStat": ["integrity", "popularity"],
+                    "effectAmount": ["-10", "+10"]
                 },
                 {
-                    "name": "2",
-                    "effectedStat": ["popularity"],
-                    "effectAmount": ["-10"]
+                    "name": "No",
+                    "effectedStat": ["integrity", "intelligence"],
+                    "effectAmount": ["+10", "+10"]
                 }
             ]
         }
     },
     "ComputerScience": {
         "CS1": {
-            "title": "C1",
+            "title": "Do you use AI to help you complete assignments?",
             "description": "",
             "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
             "options": [
                 {
-                    "name": "1",
-                    "effectedStat": ["intelligence"],
-                    "effectAmount": ["+10"]
+                    "name": "No",
+                    "effectedStat": ["integtiy", "intelligence"],
+                    "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "2",
-                    "effectedStat": ["intelligence"],
-                    "effectAmount": ["-10"]
+                    "name": "Yes",
+                    "effectedStat": ["integrity", "popularity"],
+                    "effectAmount": ["-10", "+15"]
                 }
             ]
         },
         "CS2": {
-            "title": "C2",
-            "description": "",
-            "type": "twoChoice",
-            "options": [
-                {
-                    "name": "1",
-                    "effectedStat": ["intelligence"],
-                    "effectAmount": ["+10"]
-                },
-                {
-                    "name": "2",
-                    "effectedStat": ["popularity"],
-                    "effectAmount": ["-10"]
-                }
-            ]
-        },
-        "CS3": {
-            "title": "C3",
-            "description": "",
-            "type": "twoChoice",
-            "options": [
-                {
-                    "name": "1",
-                    "effectedStat": ["intelligence"],
-                    "effectAmount": ["+10"]
-                },
-                {
-                    "name": "2",
-                    "effectedStat": ["integrity"],
-                    "effectAmount": ["-10"]
-                }
-            ]
-        },
-        "CS4": {
-            "title": "C4",
+            "title": "Do you want to get an internship?",
             "description": "",
             "type": "twoChoice",
             "trigger": {
@@ -222,18 +212,58 @@
             "options": [
                 {
                     "name": "1",
-                    "effectedStat": ["popularity"],
+                    "effectedStat": ["intelligence"],
                     "effectAmount": ["+10"]
                 },
                 {
                     "name": "2",
-                    "effectedStat": ["intelligence"],
-                    "effectAmount": ["-10"]
+                    "effectedStat": ["popularity", "integrity"],
+                    "effectAmount": ["-10", "+15"]
+                }
+            ]
+        },
+        "CS3": {
+            "title": "Do you enjoy videogames?",
+            "description": "It's a stereotype.",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "Yes",
+                    "effectedStat": ["intelligence", "popularity"],
+                    "effectAmount": ["+10", "-15"]
+                },
+                {
+                    "name": "No",
+                    "effectedStat": ["integrity", "popularity"],
+                    "effectAmount": ["-10", "+15"]
+                }
+            ]
+        },
+        "CS4": {
+            "title": "Do you want a BS or BA of Computer Science",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
+            "options": [
+                {
+                    "name": "BS",
+                    "effectedStat": ["popularity", "intelligence"],
+                    "effectAmount": ["+10", "-15"]
+                },
+                {
+                    "name": "BA",
+                    "effectedStat": ["intelligence", "popularity"],
+                    "effectAmount": ["+10", "-15"]
                 }
             ]
         },
         "CS5": {
-            "title": "C5",
+            "title": "Do you let someone use your code?",
             "descriptin": "",
             "type": "twoChoice",
             "trigger": {
@@ -241,19 +271,19 @@
             },
             "options": [
                 {
-                    "name": "1",
-                    "effectedStat": ["popularity"],
-                    "effectAmount": ["+10"]
+                    "name": "Yes",
+                    "effectedStat": ["popularity", "integrity"],
+                    "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "2",
-                    "effectedStat": ["popularity"],
-                    "effectAmount": ["-10"]
+                    "name": "No",
+                    "effectedStat": ["popularity", "integrity"],
+                    "effectAmount": ["-10", "+15"]
                 }
             ]
         },
         "CS6": {
-            "title": "C6",
+            "title": "Do you want to play Esports?",
             "description": "",
             "type": "twoChoice",
             "trigger": {
@@ -261,19 +291,19 @@
             },
             "options": [
                 {
-                    "name": "1",
-                    "effectedStat": ["popularity"],
-                    "effectAmount": ["+10"]
+                    "name": "Yes",
+                    "effectedStat": ["popularity", "intelligence"],
+                    "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "2",
-                    "effectedStat": ["integrity"],
-                    "effectAmount": ["-10"]
+                    "name": "No",
+                    "effectedStat": ["integrity", "popularity"],
+                    "effectAmount": ["+10", "-15"]
                 }
             ]
         },
         "CS7": {
-            "title": "C7",
+            "title": "Do you want to contribute to open scorce applications? ",
             "description": "",
             "type": "twoChoice",
             "trigger": {
@@ -281,19 +311,19 @@
             },
             "options": [
                 {
-                    "name": "1",
-                    "effectedStat": ["integrity"],
-                    "effectAmount": ["+10"]
+                    "name": "Yes",
+                    "effectedStat": ["integrity", "popularity"],
+                    "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "2",
-                    "effectedStat": ["integrity"],
-                    "effectAmount": ["-10"]
+                    "name": "No",
+                    "effectedStat": ["integrity", "intelligence"],
+                    "effectAmount": ["-10", "+10"]
                 }
             ]
         },
         "CS8": {
-            "title": "C8",
+            "title": "Do you prefer Linux machines or Windows",
             "description": "",
             "type": "twoChoice",
             "trigger": {
@@ -301,19 +331,19 @@
             },
             "options": [
                 {
-                    "name": "1",
-                    "effectedStat": ["integrity"],
-                    "effectAmount": ["+10"]
+                    "name": "Linux",
+                    "effectedStat": ["integrity", "popularity"],
+                    "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "2",
-                    "effectedStat": ["intelligence"],
-                    "effectAmount": ["-10"]
+                    "name": "Windows",
+                    "effectedStat": ["intelligence", "popularity"],
+                    "effectAmount": ["-10", "+15"]
                 }
             ]
         },
         "CS9": {
-            "title": "C9",
+            "title": "Do you code for fun?",
             "description": "",
             "type": "twoChoice",
             "trigger": {
@@ -321,14 +351,14 @@
             },
             "options": [
                 {
-                    "name": "1",
-                    "effectedStat": ["integrity"],
-                    "effectAmount": ["+10"]
+                    "name": "Yes",
+                    "effectedStat": ["integrity", "intelligence"],
+                    "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "2",
-                    "effectedStat": ["popularity"],
-                    "effectAmount": ["-10"]
+                    "name": "No",
+                    "effectedStat": ["popularity", "intelligence"],
+                    "effectAmount": ["-10", "+15"]
                 }
             ]
         }
@@ -540,7 +570,7 @@
         }
     },
 
-    "Business": {
+    "Buisness": {
         "CS1": {
             "title": "C1",
             "description": "",
