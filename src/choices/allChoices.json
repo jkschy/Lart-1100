@@ -183,7 +183,7 @@
     },
     "ComputerScience": {
         "CS1": {
-            "title": "CS1",
+            "title": "Do you use AI to help you complete assignments?",
             "description": "",
             "type": "twoChoice",
             "trigger": {
@@ -191,19 +191,19 @@
             },
             "options": [
                 {
-                    "name": "1",
-                    "effectedStat": ["intelligence", "integrity"],
+                    "name": "No",
+                    "effectedStat": ["integtiy", "intelligence"],
                     "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "2",
-                    "effectedStat": ["intelligence", "popularity"],
+                    "name": "Yes",
+                    "effectedStat": ["integrity", "popularity"],
                     "effectAmount": ["-10", "+15"]
                 }
             ]
         },
         "CS2": {
-            "title": "CS2",
+            "title": "Do you want to get an internship?",
             "description": "",
             "type": "twoChoice",
             "trigger": {
@@ -212,8 +212,8 @@
             "options": [
                 {
                     "name": "1",
-                    "effectedStat": ["intelligence", "integrity"],
-                    "effectAmount": ["+10", "-15"]
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
                 },
                 {
                     "name": "2",
@@ -223,27 +223,27 @@
             ]
         },
         "CS3": {
-            "title": "CS3",
-            "description": "",
+            "title": "Do you enjoy videogames?",
+            "description": "It's a stereotype.",
             "type": "twoChoice",
             "trigger": {
                 "event": ""
             },
             "options": [
                 {
-                    "name": "1",
+                    "name": "Yes",
                     "effectedStat": ["intelligence", "popularity"],
                     "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "2",
+                    "name": "No",
                     "effectedStat": ["integrity", "popularity"],
                     "effectAmount": ["-10", "+15"]
                 }
             ]
         },
         "CS4": {
-            "title": "CS4",
+            "title": "Do you want a BS or BA of Computer Science",
             "description": "",
             "type": "twoChoice",
             "trigger": {
@@ -251,19 +251,19 @@
             },
             "options": [
                 {
-                    "name": "1",
+                    "name": "BS",
                     "effectedStat": ["popularity", "intelligence"],
                     "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "2",
-                    "effectedStat": ["intelligence", "integrity"],
-                    "effectAmount": ["-10", "-15"]
+                    "name": "BA",
+                    "effectedStat": ["intelligence", "popularity"],
+                    "effectAmount": ["+10", "-15"]
                 }
             ]
         },
         "CS5": {
-            "title": "CS5",
+            "title": "Do you let someone use your code?",
             "descriptin": "",
             "type": "twoChoice",
             "trigger": {
@@ -271,19 +271,19 @@
             },
             "options": [
                 {
-                    "name": "1",
+                    "name": "Yes",
                     "effectedStat": ["popularity", "integrity"],
                     "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "2",
+                    "name": "No",
                     "effectedStat": ["popularity", "integrity"],
                     "effectAmount": ["-10", "+15"]
                 }
             ]
         },
         "CS6": {
-            "title": "CS6",
+            "title": "Do you want to play Esports?",
             "description": "",
             "type": "twoChoice",
             "trigger": {
@@ -291,19 +291,19 @@
             },
             "options": [
                 {
-                    "name": "1",
+                    "name": "Yes",
                     "effectedStat": ["popularity", "intelligence"],
-                    "effectAmount": ["+10", "+15"]
+                    "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "2",
+                    "name": "No",
                     "effectedStat": ["integrity", "popularity"],
-                    "effectAmount": ["-10", "-15"]
+                    "effectAmount": ["+10", "-15"]
                 }
             ]
         },
         "CS7": {
-            "title": "CS7",
+            "title": "Do you want to contribute to open scorce applications? ",
             "description": "",
             "type": "twoChoice",
             "trigger": {
@@ -311,19 +311,19 @@
             },
             "options": [
                 {
-                    "name": "1",
+                    "name": "Yes",
                     "effectedStat": ["integrity", "popularity"],
-                    "effectAmount": ["+10", "+15"]
+                    "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "2",
+                    "name": "No",
                     "effectedStat": ["integrity", "intelligence"],
                     "effectAmount": ["-10", "+10"]
                 }
             ]
         },
         "CS8": {
-            "title": "CS8",
+            "title": "Do you prefer Linux machines or Windows",
             "description": "",
             "type": "twoChoice",
             "trigger": {
@@ -331,19 +331,19 @@
             },
             "options": [
                 {
-                    "name": "1",
+                    "name": "Linux",
                     "effectedStat": ["integrity", "popularity"],
                     "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "2",
+                    "name": "Windows",
                     "effectedStat": ["intelligence", "popularity"],
                     "effectAmount": ["-10", "+15"]
                 }
             ]
         },
         "CS9": {
-            "title": "CS9",
+            "title": "Do you code for fun?",
             "description": "",
             "type": "twoChoice",
             "trigger": {
@@ -351,14 +351,14 @@
             },
             "options": [
                 {
-                    "name": "1",
+                    "name": "Yes",
                     "effectedStat": ["integrity", "intelligence"],
                     "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "2",
+                    "name": "No",
                     "effectedStat": ["popularity", "intelligence"],
-                    "effectAmount": ["-10"]
+                    "effectAmount": ["-10", "+15"]
                 }
             ]
         }
