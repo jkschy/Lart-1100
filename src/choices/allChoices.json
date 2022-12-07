@@ -1,85 +1,85 @@
 {
-        "Random": {
-            "R1": {
-                "title": "Did you come to college with a girlfriend?",
-                "description": "",
-                "type": "twoChoice",
-                "trigger": {
-                    "event": ""
-                },
-                "options": [
-                    {
-                        "name": "No",
-                        "effectedStat": ["intelligence", "integrity"],
-                        "effectAmount": ["+10", "-15"]
-                    },
-                    {
-                        "name": "Yes",
-                        "effectedStat": ["intelligence", "popularity"],
-                        "effectAmount": ["-10", "+15"]
-                    }
-                ]
+    "Random": {
+        "R1": {
+            "title": "Did you come to college with a girlfriend?",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
             },
-            "R2": {
-                "title": "Do you want to go to chapel this monring?",
-                "description": "Chapel is important, but takes time.",
-                "type": "twoChoice",
-                "trigger": {
-                    "event": ""
+            "options": [
+                {
+                    "name": "No",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
                 },
-                "options": [
-                    {
-                        "name": "1",
-                        "effectedStat": ["intelligence", "integrity"],
-                        "effectAmount": ["+10", "-15"]
-                    },
-                    {
-                        "name": "2",
-                        "effectedStat": ["popularity", "integrity"],
-                        "effectAmount": ["-10", "+15"]
-                    }
-                ]
+                {
+                    "name": "Yes",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "R2": {
+            "title": "Do you want to go to chapel this monring?",
+            "description": "Chapel is important, but takes time.",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
             },
-            "R3": {
-                "title": "Do you want to go to a party off campus?",
-                "description": "",
-                "type": "twoChoice",
-                "trigger": {
-                    "event": ""
+            "options": [
+                {
+                    "name": "1",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
                 },
-                "options": [
-                    {
-                        "name": "No",
-                        "effectedStat": ["intelligence", "popularity"],
-                        "effectAmount": ["+10", "-5"]
-                    },
-                    {
-                        "name": "Yes",
-                        "effectedStat": ["integrity", "popularity"],
-                        "effectAmount": ["-10", "+15"]
-                    }
-                ]
+                {
+                    "name": "2",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "R3": {
+            "title": "Do you want to go to a party off campus?",
+            "description": "",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
             },
-            "R4": {
-                "title": "Do you want to go to a cab event?",
-                "description": "Cab events are great ways to make new friends!",
-                "type": "twoChoice",
-                "trigger": {
-                    "event": ""
+            "options": [
+                {
+                    "name": "No",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["+10"]
                 },
-                "options": [
-                    {
-                        "name": "Yes",
-                        "effectedStat": ["popularity", "intelligence"],
-                        "effectAmount": ["+10", "-15"]
-                    },
-                    {
-                        "name": "No",
-                        "effectedStat": ["intelligence", "integrity"],
-                        "effectAmount": ["-10", "-15"]
-                    }
-                ]
+                {
+                    "name": "Yes",
+                    "effectedStat": ["integrity"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
+        "R4": {
+            "title": "Do you want to go to a cab event?",
+            "description": "Cab events are great ways to make new friends!",
+            "type": "twoChoice",
+            "trigger": {
+                "event": ""
             },
+            "options": [
+                {
+                    "name": "Yes",
+                    "effectedStat": ["popularity"],
+                    "effectAmount": ["+10"]
+                },
+                {
+                    "name": "No",
+                    "effectedStat": ["intelligence"],
+                    "effectAmount": ["-10"]
+                }
+            ]
+        },
         "R5": {
             "title": "R5",
             "descriptin": "",
