@@ -7,7 +7,6 @@ import {
     SpecialTrigger,
     SpecialTriggerFromString
 } from "../Utils/Enums";
-import {type} from "os";
 
 export type triggerJSONType =
     {

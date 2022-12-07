@@ -73,7 +73,6 @@
             "title": "You are offered a smoke at a party do you take it?",
             "descriptin": "",
             "type": "twoChoice",
-
             "options": [
                 {
                     "name": "Yes",
@@ -91,7 +90,6 @@
             "title": "R6",
             "description": "",
             "type": "twoChoice",
-
             "options": [
                 {
                     "name": "1",
@@ -109,7 +107,6 @@
             "title": "Sleep in or go to class",
             "description": "",
             "type": "twoChoice",
-
             "options": [
                 {
                     "name": "Sleep in",
@@ -127,7 +124,6 @@
             "title": "Your friends want to cheat on a test with you.",
             "description": "",
             "type": "twoChoice",
-
             "options": [
                 {
                     "name": "Cheat",
@@ -145,7 +141,6 @@
             "title": "A member of the opposite sex wants to go to third base do you do it?",
             "description": "",
             "type": "twoChoice",
-
             "options": [
                 {
                     "name": "Yes",
@@ -165,7 +160,6 @@
             "title": "Do you use AI to help you complete assignments?",
             "description": "",
             "type": "twoChoice",
-
             "options": [
                 {
                     "name": "No",
@@ -183,7 +177,6 @@
             "title": "Do you want to get an internship?",
             "description": "",
             "type": "twoChoice",
-
             "options": [
                 {
                     "name": "1",
@@ -201,7 +194,6 @@
             "title": "Do you enjoy videogames?",
             "description": "It's a stereotype.",
             "type": "twoChoice",
-
             "options": [
                 {
                     "name": "Yes",
@@ -511,7 +503,7 @@
         }
     },
 
-    "Buisness": {
+    "Business": {
         "CS1": {
             "title": "C1",
             "description": "",
