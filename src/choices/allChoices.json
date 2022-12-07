@@ -1,19 +1,22 @@
 {
     "Random": {
         "R1": {
-            "title": "R1",
+            "title": "Did you come to college with a girlfriend?",
             "description": "",
             "type": "twoChoice",
+            "trigger": {
+                "event": ""
+            },
             "options": [
                 {
-                    "name": "1",
-                    "effectedStat": ["intelligence"],
-                    "effectAmount": ["+10"]
+                    "name": "No",
+                    "effectedStat": ["intelligence", "integrity"],
+                    "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "2",
-                    "effectedStat": ["intelligence"],
-                    "effectAmount": ["-10"]
+                    "name": "Yes",
+                    "effectedStat": ["intelligence", "popularity"],
+                    "effectAmount": ["-10", "+15"]
                 }
             ]
         },
