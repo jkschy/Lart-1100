@@ -91,7 +91,7 @@ const Sidebar = (props: SidebarProps) => {
                         <ActionButtons study={study} work={work} hasFreeTime={props.player.hasFreeTime}/>
                     </SidebarItem>
                     <Spacer y={.3}/>
-                    {showMiniGame && <RandomMiniGame onPass={pass} onFail={fail} type={type}/>}
+                    {showMiniGame && <RandomMiniGame onPass={pass} onFail={fail} type={type} updatePlayer={props.updatePlayer}/>}
                 </Card.Body>
             </Card>
             <div className={"sidebar-content"}>

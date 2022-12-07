@@ -2,6 +2,7 @@ import {Button, Modal, Input, Text, Tooltip} from "@nextui-org/react";
 import {WORDS} from "./assets/Wordlist";
 import {randomNumberBetween} from "../../Utils/Utils";
 import {useEffect, useRef, useState} from "react";
+import {toast} from "react-toastify";
 
 const Typing = (props: TypingProps) => {
     const [words, setWords] = useState<string[]>([]);
@@ -9,6 +10,7 @@ const Typing = (props: TypingProps) => {
     const [startTime, setStartTime] = useState<Date>(new Date());
 
     const inputRef = useRef<HTMLInputElement>(null);
+    const textRef = useRef<HTMLHeadElement>(null);
 
     const POINTS_LOST_PER_ERROR = 5;
     const POINTS_LOST_PER_SECOND = 2;
@@ -53,6 +55,12 @@ const Typing = (props: TypingProps) => {
 
     useEffect(() => {
         if (words.length === 0) getNewWords();
+        if (textRef.current) {
+            textRef.current.addEventListener("copy", (e) => {
+                props.onFail()
+                toast("Cheating? really?")
+            });
+        }
         }, [])
 
     return (
@@ -61,7 +69,9 @@ const Typing = (props: TypingProps) => {
                 <Text h2>Typing Test</Text>
             </Modal.Header>
             <Modal.Body className={"flex-center flex-column"} css={{height: "140px"}}>
-                <Text h5 css={{ta: "center", mb: "30px"}}>{words.join(" ")}</Text>
+                <Text h5
+                      ref={textRef}
+                      css={{ta: "center", mb: "30px"}}>{words.join(" ")}</Text>
                 <Input placeholder={"Message"}
                        bordered
                        ref={inputRef}

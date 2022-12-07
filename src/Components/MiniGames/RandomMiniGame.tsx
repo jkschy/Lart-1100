@@ -1,9 +1,10 @@
 import WordScramble from "./WordScramble";
 import {Modal} from "@nextui-org/react";
-import {useState} from "react";
+import React, {useState} from "react";
 import Typing from "./Typing";
+import Player from "../../Models/Player";
 
-const RandomMiniGame = ({onPass, onFail, type}: RandomMiniGameProps) => {
+const RandomMiniGame = ({onPass, onFail, type, updatePlayer}: RandomMiniGameProps) => {
     const [open, setOpen] = useState(true);
 
     const MAXIMUM_LOSS = 80;
@@ -19,13 +20,14 @@ const RandomMiniGame = ({onPass, onFail, type}: RandomMiniGameProps) => {
     }
 
     return <Modal open={open} blur preventClose>
-        {type === "study" && <WordScramble onPass={onSuccess} onFail={onFailure}/>}
+        {type === "study" && <WordScramble updatePlayer={updatePlayer} onPass={onSuccess} onFail={onFailure}/>}
         {type === "work" && <Typing onPass={onSuccess} onFail={onFail}/>}
     </Modal>
 }
 interface RandomMiniGameProps {
     onPass: (amountLost?: number) => void
     onFail: () => void,
+    updatePlayer: React.Dispatch<React.SetStateAction<Player | undefined>>,
     type: "work" | "study",
 }
 

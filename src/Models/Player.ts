@@ -12,12 +12,13 @@ export interface IPlayer {
     freeTimePerQuestion: number,
     money: number,
     choiceLoader: ChoiceLoader,
+    timesCaught: number
 }
 
 class Player {
     private readonly player: IPlayer;
 
-    private constructor(year: number, major: string, intelligence: number, integrity: number, popularity: number, freeTime: number, money: number, choiceLoader: ChoiceLoader) {
+    private constructor(year: number, major: string, intelligence: number, integrity: number, popularity: number, freeTime: number, money: number, choiceLoader: ChoiceLoader, timesCaught: number) {
         this.player = {
             year: year,
             major: major,
@@ -28,6 +29,7 @@ class Player {
             freeTimePerQuestion: FreeTimeFromMajor(major),
             money: money,
             choiceLoader: choiceLoader,
+            timesCaught: timesCaught,
         }
 
         this.saveToLocalStorage();
@@ -118,6 +120,18 @@ class Player {
         return Player.fromPlayer(this.player)
     }
 
+    public caught() {
+        this.player.timesCaught++;
+
+        if (this.player.timesCaught == 2) {
+            //TODO: add loss event
+            console.log("you lose");
+        }
+
+        return Player.fromPlayer(this.player);
+    }
+
+
     public get year() {
         let year = "Freshman";
         switch (this.getYearNum()) {
@@ -180,6 +194,7 @@ class Player {
             popularity: this.player.popularity,
             freeTime: this.player.freeTime,
             money: this.player.money,
+            timesCaught: this.player.timesCaught,
         }
     }
 
@@ -192,12 +207,12 @@ class Player {
     }
 
     private static fromPlayer(player:IPlayer) {
-        return new Player(player.year, player.major, player.intelligence, player.integrity, player.popularity, player.freeTime, player.money, player.choiceLoader);
+        return new Player(player.year, player.major, player.intelligence, player.integrity, player.popularity, player.freeTime, player.money, player.choiceLoader, player.timesCaught);
     }
 
 
-    public static existingPlayer(year: number, major: string, intelligence: number, integrity: number, popularity: number, freeTime: number, money: number, choiceLoader: ChoiceLoader) {
-        return new Player(year, major, intelligence, integrity, popularity, freeTime, money, choiceLoader);
+    public static existingPlayer(year: number, major: string, intelligence: number, integrity: number, popularity: number, freeTime: number, money: number, choiceLoader: ChoiceLoader, timesCaught: number) {
+        return new Player(year, major, intelligence, integrity, popularity, freeTime, money, choiceLoader, timesCaught);
     }
 
     public static newPlayer(major?: string) {
@@ -211,10 +226,10 @@ class Player {
         }
 
         if (player) {
-            return this.existingPlayer(player.year, player.major, player.intelligence, player.integrity, player.popularity, player.freeTime, player.money, player.choiceLoader)
+            return this.existingPlayer(player.year, player.major, player.intelligence, player.integrity, player.popularity, player.freeTime, player.money, player.choiceLoader, player.timesCaught)
         }
 
-       return new Player(1, major ? major.toString() : 'NULL', 50, randomNumberBetween(0, 100), randomNumberBetween(0, 100), 12, 100, new ChoiceLoader());
+       return new Player(1, major ? major.toString() : 'NULL', 50, randomNumberBetween(0, 100), randomNumberBetween(0, 100), 12, 100, new ChoiceLoader(), 0);
     }
 
     public static hasExistingPlayer() {
