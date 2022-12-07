@@ -1,32 +1,26 @@
 {
     "Random": {
         "R1": {
-            "title": "Did you come to college with a girlfriend?",
+            "title": "R1",
             "description": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": ""
-            },
             "options": [
                 {
-                    "name": "No",
+                    "name": "1",
                     "effectedStat": ["intelligence"],
                     "effectAmount": ["+10"]
                 },
                 {
-                    "name": "Yes",
+                    "name": "2",
                     "effectedStat": ["intelligence"],
                     "effectAmount": ["-10"]
                 }
             ]
         },
         "R2": {
-            "title": "Do you want to go to chapel this monring?",
-            "description": "Chapel is important, but takes time.",
+            "title": "R2",
+            "description": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": ""
-            },
             "options": [
                 {
                     "name": "1",
@@ -41,7 +35,7 @@
             ]
         },
         "R3": {
-            "title": "Do you want to go to a party off campus?",
+            "title": "R3",
             "description": "",
             "type": "twoChoice",
             "trigger": {
@@ -49,32 +43,32 @@
             },
             "options": [
                 {
-                    "name": "No",
+                    "name": "1",
                     "effectedStat": ["intelligence"],
                     "effectAmount": ["+10"]
                 },
                 {
-                    "name": "Yes",
+                    "name": "2",
                     "effectedStat": ["integrity"],
                     "effectAmount": ["-10"]
                 }
             ]
         },
         "R4": {
-            "title": "Do you want to go to a cab event?",
-            "description": "Cab events are great ways to make new friends!",
+            "title": "R4",
+            "description": "",
             "type": "twoChoice",
             "trigger": {
                 "event": ""
             },
             "options": [
                 {
-                    "name": "Yes",
+                    "name": "1",
                     "effectedStat": ["popularity"],
                     "effectAmount": ["+10"]
                 },
                 {
-                    "name": "No",
+                    "name": "2",
                     "effectedStat": ["intelligence"],
                     "effectAmount": ["-10"]
                 }
