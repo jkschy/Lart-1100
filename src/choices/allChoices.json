@@ -4,9 +4,6 @@
             "title": "Did you come to college with a girlfriend?",
             "description": "",
             "type": "twoChoice",
-            "trigger": {
-                "event": ""
-            },
             "options": [
                 {
                     "name": "No",
@@ -14,8 +11,8 @@
                     "effectAmount": ["+10", "-15"]
                 },
                 {
-                    "name": "Yes",
-                    "effectedStat": ["intelligence", "popularity"],
+                    "name": "yes",
+                    "effectedStat": ["intelligence"],
                     "effectAmount": ["-10", "+15"]
                 }
             ]
