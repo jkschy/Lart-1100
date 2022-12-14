@@ -12,5 +12,10 @@ Currently we have a few different supported majors
 
 Each offer their own unique sets of challenges and benefits.
 
+## Steps to run locally
+1. clone repo
+2. `npm install`
+2. `npm run start`
+
 ![Open Issues](https://img.shields.io/github/issues/jkschy/Lart-1100?style=flat) ![Deployment](https://vercelbadge.vercel.app/api/jkschy/Lart-1100) ![Lines](https://img.shields.io/tokei/lines/github/jkschy/lart-1100) <br/> [Link to Deployed Application](https://lart-1100.vercel.app) <br/>
 
