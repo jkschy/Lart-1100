@@ -158,7 +158,7 @@ const WordScramble = (props: WordScrambleProps) => {
     )
 }
 
-interface WordScrambleProps {
+export interface WordScrambleProps {
     onPass: () => void,
     onFail: () => void,
     updatePlayer: React.Dispatch<React.SetStateAction<Player | undefined>>,

@@ -85,13 +85,14 @@ const Sidebar = (props: SidebarProps) => {
                     <SidebarItem title={"Money"} value={`$${props.player.money}`} color={"success"}/>
                     <SidebarItem title={"Exam:"} value={"50%"} color={"secondary"}/>
                     <SidebarItem title={"Job"}>
-                        <JobDropdown/>
+                        <JobDropdown updatePlayer={props.updatePlayer}/>
                     </SidebarItem>
                     <SidebarItem>
                         <ActionButtons study={study} work={work} hasFreeTime={props.player.hasFreeTime}/>
                     </SidebarItem>
                     <Spacer y={.3}/>
                     {showMiniGame && <RandomMiniGame onPass={pass} onFail={fail} type={type} updatePlayer={props.updatePlayer}/>}
+                    <div id={"jobModalPortal"}></div>
                 </Card.Body>
             </Card>
             <div className={"sidebar-content"}>
