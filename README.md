@@ -13,7 +13,7 @@ Currently we have a few different supported majors
 Each offer their own unique sets of challenges and benefits.
 
 ## Steps to run locally
-1. clone repo
+1. git clone https://github.com/jkschy/Lart-1100
 2. `npm install`
 2. `npm run start`
 ---
