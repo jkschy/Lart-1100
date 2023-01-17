@@ -28,7 +28,6 @@ root.render(
             <ToastContainer/>
         </NextUIProvider>
     </ToastContext.Provider>
-
 );
 
 // If you want to start measuring performance in your app, pass a function
