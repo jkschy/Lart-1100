@@ -79,7 +79,7 @@ const Sidebar = (props: SidebarProps) => {
             <Card css={{w: "250px"}}>
                 <Card.Body css={{d: "flex", fd: "column", rowGap: "10px", padding: "6px 12px 0px 2px", overflow: "hidden"}}>
                    <SidebarItem title={"Major"} value={props.player.major}/>
-                   <SidebarItem title={"Year"} value={props.player.year.toString()}/>
+                   <SidebarItem title={"Year"} value={props.player.year?.toString()}/>
                     <Divider x={.8}/>
                     <SidebarItem title={"Free Time"} value={`${props.player.freeTime} Hours`} color={"warning"}/>
                     <SidebarItem title={"Money"} value={`$${props.player.money}`} color={"success"}/>

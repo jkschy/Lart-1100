@@ -12,13 +12,14 @@ export interface IPlayer {
     freeTimePerQuestion: number,
     money: number,
     choiceLoader: ChoiceLoader,
-    timesCaught: number
+    timesCaught: number,
+    choiceCount: number
 }
 
 class Player {
     private readonly player: IPlayer;
-
-    private constructor(year: number, major: string, intelligence: number, integrity: number, popularity: number, freeTime: number, money: number, choiceLoader: ChoiceLoader, timesCaught: number) {
+    private readonly CHOICESPERYEAR = 3
+    private constructor(year: number, major: string, intelligence: number, integrity: number, popularity: number, freeTime: number, money: number, choiceLoader: ChoiceLoader, timesCaught: number, choiceCount: number) {
         this.player = {
             year: year,
             major: major,
@@ -30,6 +31,7 @@ class Player {
             money: money,
             choiceLoader: choiceLoader,
             timesCaught: timesCaught,
+            choiceCount: choiceCount,
         }
 
         this.saveToLocalStorage();
@@ -112,7 +114,9 @@ class Player {
 
     public newChoice() {
         this.player.choiceLoader.choices.get(MajorFromString(this.major.replaceAll(" ", "")))?.getNewChoice()
+        this.player.choiceCount += 1
         this.saveToLocalStorage()
+        return Player.fromPlayer(this.player)
     }
 
     public addFreeTime() {
@@ -133,20 +137,24 @@ class Player {
 
 
     public get year() {
-        let year = "Freshman";
-        switch (this.getYearNum()) {
+        console.log(this.player.choiceCount)
+        console.log(this.CHOICESPERYEAR)
+        let yearNum =  Math.trunc((this.player.choiceCount/this.CHOICESPERYEAR)+1);
+        
+        console.log("Year: " + yearNum)
+        switch (yearNum) {
+            case 1:
+                return "Freshmen"
             case 2:
-                year = "Sophomore";
-                break;
+                return "Sophomore";
             case 3:
-                year = "Junior";
-                break;
+                return "Junior";
             case 4:
-                year = "Senior";
-                break;
+                return "Senior";
+            default:
+                return "Freshmen";
         }
-
-        return year;
+    
     }
 
     public getYearNum() {
@@ -195,6 +203,7 @@ class Player {
             freeTime: this.player.freeTime,
             money: this.player.money,
             timesCaught: this.player.timesCaught,
+            choiceCount: this.player.choiceCount,
         }
     }
 
@@ -207,12 +216,12 @@ class Player {
     }
 
     private static fromPlayer(player:IPlayer) {
-        return new Player(player.year, player.major, player.intelligence, player.integrity, player.popularity, player.freeTime, player.money, player.choiceLoader, player.timesCaught);
+        return new Player(player.year, player.major, player.intelligence, player.integrity, player.popularity, player.freeTime, player.money, player.choiceLoader, player.timesCaught, player.choiceCount);
     }
 
 
-    public static existingPlayer(year: number, major: string, intelligence: number, integrity: number, popularity: number, freeTime: number, money: number, choiceLoader: ChoiceLoader, timesCaught: number) {
-        return new Player(year, major, intelligence, integrity, popularity, freeTime, money, choiceLoader, timesCaught);
+    public static existingPlayer(year: number, major: string, intelligence: number, integrity: number, popularity: number, freeTime: number, money: number, choiceLoader: ChoiceLoader, timesCaught: number, choiceCount: number) {
+        return new Player(year, major, intelligence, integrity, popularity, freeTime, money, choiceLoader, timesCaught, choiceCount);
     }
 
     public static newPlayer(major?: string) {
@@ -226,10 +235,10 @@ class Player {
         }
 
         if (player) {
-            return this.existingPlayer(player.year, player.major, player.intelligence, player.integrity, player.popularity, player.freeTime, player.money, player.choiceLoader, player.timesCaught)
+            return this.existingPlayer(player.year, player.major, player.intelligence, player.integrity, player.popularity, player.freeTime, player.money, player.choiceLoader, player.timesCaught, player.choiceCount)
         }
 
-       return new Player(1, major ? major.toString() : 'NULL', 50, randomNumberBetween(0, 100), randomNumberBetween(0, 100), 12, 100, new ChoiceLoader(), 0);
+       return new Player(1, major ? major.toString() : 'NULL', 50, randomNumberBetween(0, 100), randomNumberBetween(0, 100), 12, 100, new ChoiceLoader(), 0, 0);
     }
 
     public static hasExistingPlayer() {
